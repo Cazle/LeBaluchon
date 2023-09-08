@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,7 +12,7 @@
         <!--Weather-->
         <scene sceneID="R0c-RV-mwk">
             <objects>
-                <viewController title="Weather" id="IwW-mx-CPe" sceneMemberID="viewController">
+                <viewController title="Weather" id="IwW-mx-CPe" customClass="WeatherController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgW-0o-trY">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -33,7 +34,9 @@
                             <constraint firstItem="ISb-Rt-C5D" firstAttribute="top" secondItem="3Ex-4W-8Bm" secondAttribute="top" constant="10" id="rGW-8n-nMw"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="wAU-zf-FnC"/>
+                    <tabBarItem key="tabBarItem" title="Weather" id="wAU-zf-FnC">
+                        <imageReference key="image" image="sun.min.fill" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTy-G0-KNs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -63,7 +66,10 @@
                             <constraint firstItem="BLi-Cn-CAl" firstAttribute="top" secondItem="w9y-OP-dHP" secondAttribute="top" constant="10" id="xVD-hW-cCf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Tyn-h2-l9c"/>
+                    <tabBarItem key="tabBarItem" title="Traduction" id="Tyn-h2-l9c">
+                        <imageReference key="image" image="character.bubble.fill.ja" catalog="system" symbolScale="large"/>
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93Q-WK-grF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -73,10 +79,13 @@
         <scene sceneID="oDa-VQ-4X4">
             <objects>
                 <tabBarController id="5c7-IC-0Wh" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="59T-OB-ww2">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="59T-OB-ww2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" systemColor="systemGray2Color"/>
+                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="LGh-By-4xj" kind="relationship" relationship="viewControllers" id="ZVL-zd-Mgg"/>
@@ -113,7 +122,11 @@
                             <constraint firstItem="gfQ-pN-aPM" firstAttribute="top" secondItem="ehn-Yq-dr4" secondAttribute="top" constant="10" id="zfQ-0P-lIh"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 3" id="PUn-WA-dKz"/>
+                    <tabBarItem key="tabBarItem" title="Change Rate" id="PUn-WA-dKz">
+                        <imageReference key="image" image="dollarsign.arrow.circlepath" catalog="system" symbolScale="large" variableValue="0.0"/>
+                        <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKe-Es-KOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -121,6 +134,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="character.bubble.fill.ja" catalog="system" width="128" height="110"/>
+        <image name="dollarsign.arrow.circlepath" catalog="system" width="128" height="112"/>
+        <image name="sun.min.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
