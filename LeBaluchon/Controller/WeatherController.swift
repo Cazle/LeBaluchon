@@ -9,6 +9,11 @@ import UIKit
 
 class WeatherController: UIViewController {
     
+    @IBOutlet weak var iconPictureMyLocationImageView: UIImageView!
+    @IBOutlet weak var cityNameLabelMyLocation: UILabel!
+    @IBOutlet weak var skyDescriptionLabelMyLocation: UILabel!
+    @IBOutlet weak var climateDescriptionLabelMyLocation: UILabel!
+    
     let meteo = MeteoService()
     
     override func viewDidLoad() {
@@ -27,11 +32,12 @@ class WeatherController: UIViewController {
                 switch result {
                 case .success(let data):
                     if let name = data.name {
-                        print("\(name) est le nom de la ville")
+                        self.cityNameLabelMyLocation.text = name
                     }
                     if let weather = data.weather {
                         for weatherDatas in weather {
-                            print("La description est \(weatherDatas.description), la temps est \(weatherDatas.main), et l'icon est \(weatherDatas.icon)")
+                            self.skyDescriptionLabelMyLocation.text = weatherDatas.description
+                            self.climateDescriptionLabelMyLocation.text = weatherDatas.main
                         }
                     }
                 case .failure(let error):
