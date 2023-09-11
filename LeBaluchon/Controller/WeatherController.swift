@@ -8,7 +8,7 @@
 import UIKit
 
 class WeatherController: UIViewController {
-
+    
     let meteo = MeteoService()
     
     override func viewDidLoad() {
@@ -20,22 +20,22 @@ class WeatherController: UIViewController {
         alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-
-    @IBAction func testData(_ sender: Any) {
-            meteo.getTheWeather { result in
-                DispatchQueue.main.async {
-                    switch result {
-                        case .success(let meteo):
-                            print(meteo)
-                        case .failure():
-                            self.presentAlert()
-                        default:
-                            print("Something went wrong")
+    
+    @IBAction func testIfDataWork(_ sender: Any) {
+        meteo.getTheWeather { (result: Result<MeteoModel, APIError>) in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    if let data = data.name {
+                        print("City is \(data)")
                     }
+                case .failure(let error):
+                    print(error)
                 }
             }
+        }
     }
 }
-    
+  
 
 

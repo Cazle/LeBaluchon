@@ -9,7 +9,10 @@ enum APIError: Error {
 
 class MeteoService {
     
-    private static let openWeatherAPIURL = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={2d397b17f22bb4d362b3afe34a85dddb}")!
+    private static let APIKEY = "2d397b17f22bb4d362b3afe34a85dddb"
+    private static let lat = "10.99"
+    private static let lon = "40.99"
+    private static let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(APIKEY)")!
     
     private var task: URLSessionDataTask?
     private var meteoSession: URLSession
@@ -18,8 +21,8 @@ class MeteoService {
         self.meteoSession = meteoSession
     }
     
-    func getTheWeather(callback: @escaping (Result<Meteo, APIError>) -> Void) {
-        let request = URLRequest(url: MeteoService.openWeatherAPIURL)
+    func getTheWeather(callback: @escaping (Result<MeteoModel, APIError>) -> Void) {
+        let request = URLRequest(url: MeteoService.url)
         
         task?.cancel()
         
@@ -33,16 +36,16 @@ class MeteoService {
                     callback(.failure(.invalidResponse))
                     return
                 }
-                guard let responseJSON = try? JSONDecoder().decode([String : String].self, from: data) else {
+                guard let responseJSON = try? JSONDecoder().decode(MeteoModel.self, from: data) else {
                     callback(.failure(.invalidResponse))
                     return
                 }
-                guard let name = responseJSON["name"] else {
+                guard let name = responseJSON.name else {
                     callback(.failure(.invalidNameOrCity))
                     return
                 }
                 
-                let meteo = Meteo(cityName: name)
+                let meteo = MeteoModel(name: name)
                 callback(.success(meteo))
             }
         }

@@ -1,6 +1,6 @@
 import Foundation
 
-struct Meteo {
+struct MeteoModel: Decodable {
 
-    let cityName: String
+    let name: String?
 }

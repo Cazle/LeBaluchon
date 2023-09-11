@@ -31,14 +31,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWj-0m-bYV">
-                                <rect key="frame" x="115" y="230" width="184" height="110"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e8Y-FO-5tl">
+                                <rect key="frame" x="124" y="201" width="166" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.67450982329999998" green="0.4196078479" blue="0.59607845540000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="TEST"/>
+                                <buttonConfiguration key="configuration" style="filled" title="TEST"/>
                                 <connections>
-                                    <action selector="testData:" destination="IwW-mx-CPe" eventType="touchUpInside" id="ti6-qO-zIs"/>
+                                    <action selector="testIfDataWork:" destination="IwW-mx-CPe" eventType="touchUpInside" id="jMs-ZL-3bQ"/>
                                 </connections>
                             </button>
                         </subviews>
