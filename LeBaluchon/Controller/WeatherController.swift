@@ -26,11 +26,16 @@ class WeatherController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    if let data = data.name {
-                        print("City is \(data)")
+                    if let name = data.name {
+                        print("\(name) est le nom de la ville")
+                    }
+                    if let weather = data.weather {
+                        for weatherDatas in weather {
+                            print("La description est \(weatherDatas.description), la temps est \(weatherDatas.main), et l'icon est \(weatherDatas.icon)")
+                        }
                     }
                 case .failure(let error):
-                    print(error)
+                    print("C'est l'erreur du viewController \(error)")
                 }
             }
         }

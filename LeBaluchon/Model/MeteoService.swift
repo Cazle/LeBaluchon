@@ -10,8 +10,8 @@ enum APIError: Error {
 class MeteoService {
     
     private static let APIKEY = "2d397b17f22bb4d362b3afe34a85dddb"
-    private static let lat = "10.99"
-    private static let lon = "40.99"
+    private static let lat = "46.167"
+    private static let lon = "-1.150"
     private static let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(APIKEY)")!
     
     private var task: URLSessionDataTask?
@@ -40,12 +40,13 @@ class MeteoService {
                     callback(.failure(.invalidResponse))
                     return
                 }
-                guard let name = responseJSON.name else {
+                guard let name = responseJSON.name, let weatherDescription = responseJSON.weather else {
                     callback(.failure(.invalidNameOrCity))
                     return
                 }
+               
                 
-                let meteo = MeteoModel(name: name)
+                let meteo = MeteoModel(name: name, weather: weatherDescription)
                 callback(.success(meteo))
             }
         }
