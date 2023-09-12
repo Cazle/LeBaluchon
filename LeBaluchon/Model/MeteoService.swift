@@ -9,10 +9,7 @@ enum APIError: Error {
 
 class MeteoService {
     
-    private static let APIKEY = "2d397b17f22bb4d362b3afe34a85dddb"
-    private static let lat = "46.167"
-    private static let lon = "-1.150"
-    private static let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&appid=\(APIKEY)")!
+    let LaRochelleURL = MeteoEndpoint.LaRochelle(46.167, -1.150).url(baseURL: URL(string: "https://api.openweathermap.org")!)
     
     private var task: URLSessionDataTask?
     private var meteoSession: URLSession
@@ -22,7 +19,7 @@ class MeteoService {
     }
     
     func getTheWeather(callback: @escaping (Result<MeteoModel, APIError>) -> Void) {
-        let request = URLRequest(url: MeteoService.url)
+        let request = URLRequest(url: LaRochelleURL)
         
         task?.cancel()
         
