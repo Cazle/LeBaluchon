@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		29182D4B2AB062BA00D94FE8 /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29182D4A2AB062BA00D94FE8 /* HTTPClient.swift */; };
 		29182D4D2AB06C2B00D94FE8 /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29182D4C2AB06C2B00D94FE8 /* Endpoints.swift */; };
+		29182D4F2AB06D5300D94FE8 /* Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29182D4E2AB06D5300D94FE8 /* Loaders.swift */; };
 		2995FA262AA763C20078D598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA252AA763C20078D598 /* AppDelegate.swift */; };
 		2995FA282AA763C20078D598 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA272AA763C20078D598 /* SceneDelegate.swift */; };
 		2995FA2A2AA763C20078D598 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA292AA763C20078D598 /* WeatherController.swift */; };
@@ -22,6 +23,7 @@
 /* Begin PBXFileReference section */
 		29182D4A2AB062BA00D94FE8 /* HTTPClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		29182D4C2AB06C2B00D94FE8 /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		29182D4E2AB06D5300D94FE8 /* Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loaders.swift; sourceTree = "<group>"; };
 		2995FA222AA763C20078D598 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2995FA252AA763C20078D598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2995FA272AA763C20078D598 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				2995FA3F2AAB1F690078D598 /* MeteoService.swift */,
 				29182D4A2AB062BA00D94FE8 /* HTTPClient.swift */,
 				29182D4C2AB06C2B00D94FE8 /* Endpoints.swift */,
+				29182D4E2AB06D5300D94FE8 /* Loaders.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			files = (
 				2995FA2A2AA763C20078D598 /* WeatherController.swift in Sources */,
 				2995FA262AA763C20078D598 /* AppDelegate.swift in Sources */,
+				29182D4F2AB06D5300D94FE8 /* Loaders.swift in Sources */,
 				29182D4B2AB062BA00D94FE8 /* HTTPClient.swift in Sources */,
 				29182D4D2AB06C2B00D94FE8 /* Endpoints.swift in Sources */,
 				2995FA3E2AAB1B180078D598 /* MeteoModel.swift in Sources */,

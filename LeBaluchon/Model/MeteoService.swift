@@ -23,8 +23,9 @@ class MeteoService {
         
         task?.cancel()
         
+        
         task = meteoSession.dataTask(with: request) { (data, response, error) in
-            DispatchQueue.main.async {
+           
                 guard let data = data, error == nil else {
                     callback(.failure(.invalidData))
                     return
@@ -41,13 +42,9 @@ class MeteoService {
                     callback(.failure(.invalidNameOrCity))
                     return
                 }
-               
-                
-                let meteo = MeteoModel(name: name, weather: weatherDescription)
+               let meteo = MeteoModel(name: name, weather: weatherDescription)
                 callback(.success(meteo))
-            }
         }
         task?.resume()
-        print(task!)
     }
 }
