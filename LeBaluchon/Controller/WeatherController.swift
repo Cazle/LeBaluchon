@@ -14,9 +14,9 @@ class WeatherController: UIViewController {
     @IBOutlet weak var skyDescriptionLabelMyLocation: UILabel!
     @IBOutlet weak var climateDescriptionLabelMyLocation: UILabel!
     
-    let meteo = MeteoService()
+    let meteo = MeteoService(client: URLSessionHTTPClient(session: URLSession(configuration: .default)))
     
-    override func viewDidLoad() {
+   override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }

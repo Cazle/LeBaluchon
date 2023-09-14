@@ -17,7 +17,7 @@
 		2995FA2F2AA763C30078D598 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2995FA2E2AA763C30078D598 /* Assets.xcassets */; };
 		2995FA322AA763C30078D598 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2995FA302AA763C30078D598 /* LaunchScreen.storyboard */; };
 		2995FA3E2AAB1B180078D598 /* MeteoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA3D2AAB1B180078D598 /* MeteoModel.swift */; };
-		2995FA402AAB1F690078D598 /* MeteoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA3F2AAB1F690078D598 /* MeteoService.swift */; };
+		2995FA402AAB1F690078D598 /* MeteoCallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA3F2AAB1F690078D598 /* MeteoCallAPI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +33,7 @@
 		2995FA312AA763C30078D598 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2995FA332AA763C30078D598 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2995FA3D2AAB1B180078D598 /* MeteoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoModel.swift; sourceTree = "<group>"; };
-		2995FA3F2AAB1F690078D598 /* MeteoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoService.swift; sourceTree = "<group>"; };
+		2995FA3F2AAB1F690078D598 /* MeteoCallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoCallAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2995FA3D2AAB1B180078D598 /* MeteoModel.swift */,
-				2995FA3F2AAB1F690078D598 /* MeteoService.swift */,
+				2995FA3F2AAB1F690078D598 /* MeteoCallAPI.swift */,
 				29182D4A2AB062BA00D94FE8 /* HTTPClient.swift */,
 				29182D4C2AB06C2B00D94FE8 /* Endpoints.swift */,
 				29182D4E2AB06D5300D94FE8 /* Loaders.swift */,
@@ -191,7 +191,7 @@
 				29182D4B2AB062BA00D94FE8 /* HTTPClient.swift in Sources */,
 				29182D4D2AB06C2B00D94FE8 /* Endpoints.swift in Sources */,
 				2995FA3E2AAB1B180078D598 /* MeteoModel.swift in Sources */,
-				2995FA402AAB1F690078D598 /* MeteoService.swift in Sources */,
+				2995FA402AAB1F690078D598 /* MeteoCallAPI.swift in Sources */,
 				2995FA282AA763C20078D598 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
