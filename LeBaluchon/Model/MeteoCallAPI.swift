@@ -10,21 +10,37 @@ enum APIError: Error {
 
 class MeteoService {
     
-    let LaRochelleURL = MeteoEndpoint.LaRochelle(46.167, -1.150).url(baseURL: URL(string: "https://api.openweathermap.org")!)
+    let laRochelleURL = MeteoEndpoint.laRochelle(46.167, -1.150).url(baseURL: URL(string: "https://api.openweathermap.org")!)
     
-    private var task: URLSessionDataTask?
-    private var meteoSession: URLSession
-    private var client: URLSessionHTTPClient
+    private var client: HTTPClient
     
-    init(meteoSession: URLSession = URLSession (configuration: .default), client: URLSessionHTTPClient) {
-        self.meteoSession = meteoSession
+    
+    init(client: HTTPClient = URLSessionHTTPClient(session: URLSession(configuration: .default))) {
         self.client = client
     }
     
     func getTheWeather(callback: @escaping (Result<MeteoModel, APIError>) -> Void) {
-        client.request(url: LaRochelleURL) {result in
-            print("oui")
+        client.request(url: laRochelleURL) {result in
+            switch result {
+            case let .success((data, response)):
+               callback(.success(self.meteoDatas(data: data, response: response)))
+            case .failure(_):
+               callback(.failure(APIError.invalidResponse))
+            }
         }
-
     }
+    func meteoDatas(data: Data, response: HTTPURLResponse) -> MeteoModel {
+        
+        let meteoModelEmptyIfNoDecoder = MeteoModel(name: "", weather: [])
+     
+        guard let decoder = try? JSONDecoder().decode(MeteoModel.self, from: data) else {
+            return meteoModelEmptyIfNoDecoder
+        }
+        let name = decoder.name
+        let weather = decoder.weather
+        
+        let meteoDatas = MeteoModel(name: name, weather: weather)
+        return meteoDatas
+    }
+    
 }

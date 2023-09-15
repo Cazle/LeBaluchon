@@ -14,11 +14,12 @@ class WeatherController: UIViewController {
     @IBOutlet weak var skyDescriptionLabelMyLocation: UILabel!
     @IBOutlet weak var climateDescriptionLabelMyLocation: UILabel!
     
-    let meteo = MeteoService(client: URLSessionHTTPClient(session: URLSession(configuration: .default)))
+    let meteo = MeteoService()
+    let loader = MeteoLoader()
     
    override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+       
     }
     func presentAlert() {
         let alertVC = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)

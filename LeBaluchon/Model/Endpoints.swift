@@ -1,7 +1,7 @@
 import Foundation
 
 enum MeteoEndpoint {
-    case LaRochelle(Double, Double)
+    case laRochelle(Double, Double)
     
     func url(baseURL: URL) -> URL {
         var components = URLComponents()
@@ -9,7 +9,7 @@ enum MeteoEndpoint {
         components.host = baseURL.host
         components.path = "/data/2.5/weather"
         switch self {
-        case let .LaRochelle(lat, lon):
+        case let .laRochelle(lat, lon):
             components.queryItems = []
             components.queryItems?.append(.init(name: "lat", value: "\(lat)"))
             components.queryItems?.append(.init(name: "lon", value: "\(lon)"))
