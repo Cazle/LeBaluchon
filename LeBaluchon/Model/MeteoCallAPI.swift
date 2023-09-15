@@ -10,7 +10,7 @@ enum APIError: Error {
 
 class MeteoService {
     
-    let laRochelleURL = MeteoEndpoint.laRochelle(46.167, -1.150).url(baseURL: URL(string: "https://api.openweathermap.org")!)
+    let cityUrl = MeteoEndpoint.cityLocation(46.167, -1.150).url(baseURL: URL(string: "https://api.openweathermap.org")!)
     
     private var client: HTTPClient
     
@@ -20,7 +20,7 @@ class MeteoService {
     }
     
     func getTheWeather(callback: @escaping (Result<MeteoModel, APIError>) -> Void) {
-        client.request(url: laRochelleURL) {result in
+        client.request(url: cityUrl) {result in
             switch result {
             case let .success((data, response)):
                callback(.success(self.meteoDatas(data: data, response: response)))
