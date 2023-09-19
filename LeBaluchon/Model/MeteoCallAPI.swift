@@ -10,7 +10,7 @@ enum APIError: Error {
 
 class MeteoService {
     
-    let cityUrl = MeteoEndpoint.cityLocation(46.167, -1.150).url(baseURL: URL(string: "https://api.openweathermap.org")!)
+    let cityUrl = MeteoEndpoint.cityLocation(0 , 0).url(baseURL: URL(string: "https://api.openweathermap.org")!)
     
     private var client: HTTPClient
     
