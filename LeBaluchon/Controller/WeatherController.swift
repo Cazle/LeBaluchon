@@ -18,13 +18,13 @@ class WeatherController: UIViewController {
     @IBOutlet weak var newYorkNameLabel: UILabel!
     @IBOutlet weak var newYorkSkyLabel: UILabel!
     @IBOutlet weak var newYorkClimateLabel: UILabel!
-    
+    @IBOutlet weak var newYorkCityIconImage: UIImageView!
     let loader = MeteoLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingMeteo(lat: 46.167, lon: -1.150, cityName: self.laRochelleNameLabel, skyDescription: self.laRochelleSkyLabel, climateDescription: self.laRochelleClimateLabel, icon: laRochelleIconImage)
-        loadingMeteo(lat: 40.7143, lon: -74.006, cityName: self.newYorkNameLabel, skyDescription: self.newYorkSkyLabel, climateDescription: self.newYorkClimateLabel, icon: laRochelleIconImage)
+        loadingMeteo(lat: 46.167, lon: -1.150, cityName: self.laRochelleNameLabel, skyDescription: self.laRochelleSkyLabel, climateDescription: self.laRochelleClimateLabel, icon: self.laRochelleIconImage)
+        loadingMeteo(lat: 40.7143, lon: -74.006, cityName: self.newYorkNameLabel, skyDescription: self.newYorkSkyLabel, climateDescription: self.newYorkClimateLabel, icon: self.newYorkCityIconImage)
     }
     func presentAlert() {
         let alertVC = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
@@ -61,14 +61,15 @@ class WeatherController: UIViewController {
     }
     func gettingTheIconImage(url: URL, completion: @escaping (UIImage?) -> Void) {
             URLSession.shared.dataTask(with: url) {data, response, error in
-                if let data = data, let image = UIImage(data: data) {
-                    completion(image)
-                } else {
-                    completion(nil)
+                DispatchQueue.main.async {
+                    if let data = data, let image = UIImage(data: data) {
+                        completion(image)
+                    } else {
+                        completion(nil)
+                    }
                 }
             }.resume()
-        
-    }
+        }
 }
                     
 
