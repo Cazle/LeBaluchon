@@ -18,3 +18,23 @@ enum MeteoEndpoint {
         return components.url!
     }
 }
+
+enum TranslationEndpoint {
+    case translationUrl
+    
+    func url(baseURL: URL, textToTranslate: String) -> URL {
+        var components = URLComponents()
+        components.scheme = baseURL.scheme
+        components.host = baseURL.host
+        components.path = "/language/translate/v2"
+        
+        switch self {
+        case .translationUrl:
+            components.queryItems = []
+            components.queryItems?.append(.init(name: "key", value: ""))
+            components.queryItems?.append(.init(name: "q", value: "\(textToTranslate)"))
+            components.queryItems?.append(.init(name: "en", value: "en"))
+        }
+        return components.url!
+    }
+}
