@@ -58,17 +58,17 @@ class WeatherController: UIViewController {
     }
     func gettingTheIconImage(id: String, completion: @escaping (UIImage?) -> Void) {
         let url = URL(string: "https://openweathermap.org/img/wn/\(id)@2x.png")!
-            URLSession.shared.dataTask(with: url) {data, response, error in
-                DispatchQueue.main.async {
-                    if let data = data, let image = UIImage(data: data) {
-                        completion(image)
-                    } else {
-                        completion(nil)
-                    }
+        URLSession.shared.dataTask(with: url) {data, response, error in
+            DispatchQueue.main.async {
+                if let data = data, let image = UIImage(data: data) {
+                    completion(image)
+                } else {
+                    completion(nil)
                 }
-            }.resume()
-        }
+            }
+        }.resume()
+    }
 }
-                    
+
 
 
