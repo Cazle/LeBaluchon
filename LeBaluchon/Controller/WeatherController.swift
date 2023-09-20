@@ -44,10 +44,7 @@ class WeatherController: UIViewController {
                         for weatherDatas in weather {
                             skyDescription.text = weatherDatas.description
                             climateDescription.text = weatherDatas.main
-                            
-                            let iconID = weatherDatas.icon
-                            guard let url = URL(string: "https://openweathermap.org/img/wn/\(iconID)@2x.png") else {return}
-                            self.gettingTheIconImage(url: url) {img in
+                            self.gettingTheIconImage(id: weatherDatas.icon) {img in
                                 icon.image = img
                             }
                         }
@@ -59,7 +56,8 @@ class WeatherController: UIViewController {
             }
         }
     }
-    func gettingTheIconImage(url: URL, completion: @escaping (UIImage?) -> Void) {
+    func gettingTheIconImage(id: String, completion: @escaping (UIImage?) -> Void) {
+        let url = URL(string: "https://openweathermap.org/img/wn/\(id)@2x.png")!
             URLSession.shared.dataTask(with: url) {data, response, error in
                 DispatchQueue.main.async {
                     if let data = data, let image = UIImage(data: data) {
