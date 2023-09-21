@@ -12,6 +12,7 @@
 		29182D4F2AB06D5300D94FE8 /* Loaders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29182D4E2AB06D5300D94FE8 /* Loaders.swift */; };
 		292D22822ABAF497002542E0 /* TranslateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D22812ABAF497002542E0 /* TranslateModel.swift */; };
 		292D22842ABAF54E002542E0 /* TranslateCallAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D22832ABAF54E002542E0 /* TranslateCallAPI.swift */; };
+		292D22882ABC330E002542E0 /* TranslateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292D22872ABC330E002542E0 /* TranslateController.swift */; };
 		2995FA262AA763C20078D598 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA252AA763C20078D598 /* AppDelegate.swift */; };
 		2995FA282AA763C20078D598 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA272AA763C20078D598 /* SceneDelegate.swift */; };
 		2995FA2A2AA763C20078D598 /* WeatherController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2995FA292AA763C20078D598 /* WeatherController.swift */; };
@@ -28,6 +29,7 @@
 		29182D4E2AB06D5300D94FE8 /* Loaders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loaders.swift; sourceTree = "<group>"; };
 		292D22812ABAF497002542E0 /* TranslateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateModel.swift; sourceTree = "<group>"; };
 		292D22832ABAF54E002542E0 /* TranslateCallAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateCallAPI.swift; sourceTree = "<group>"; };
+		292D22872ABC330E002542E0 /* TranslateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TranslateController.swift; sourceTree = "<group>"; };
 		2995FA222AA763C20078D598 /* LeBaluchon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeBaluchon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2995FA252AA763C20078D598 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2995FA272AA763C20078D598 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2995FA292AA763C20078D598 /* WeatherController.swift */,
+				292D22872ABC330E002542E0 /* TranslateController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				292D22842ABAF54E002542E0 /* TranslateCallAPI.swift in Sources */,
 				2995FA262AA763C20078D598 /* AppDelegate.swift in Sources */,
 				29182D4F2AB06D5300D94FE8 /* Loaders.swift in Sources */,
+				292D22882ABC330E002542E0 /* TranslateController.swift in Sources */,
 				292D22822ABAF497002542E0 /* TranslateModel.swift in Sources */,
 				29182D4B2AB062BA00D94FE8 /* HTTPClient.swift in Sources */,
 				29182D4D2AB06C2B00D94FE8 /* Endpoints.swift in Sources */,
