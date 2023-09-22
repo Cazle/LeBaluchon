@@ -8,8 +8,7 @@ class TranslateCallAPI {
         self.client = client
     }
     
-    let url = TranslationEndpoint.translationUrl.url(baseURL: URL(string: "https://translation.googleapis.com")!, textToTranslate: "Je m'appelle Kyllian")
-    
+    let url = TranslationEndpoint.translationUrl("Je m'appelle Kyllian").url(baseURL: URL(string: "https://translation.googleapis.com")!)
     func testAPI(url: URL, completion: @escaping (Result<TranslateModel, APIError>) -> Void) {
         client.request(url: url) {result in
             switch result {
@@ -27,6 +26,12 @@ class TranslateCallAPI {
         guard let decoder = try? JSONDecoder().decode(TranslateModel.self, from: data) else{
             return emptyModel
         }
+        for datas in decoder.datas {
+            datas.translation.translatedText
+            print(datas.translation.translatedText)
+            print(datas.translation)
+        }
+        print(decoder)
         return decoder
     }
 }

@@ -12,18 +12,13 @@ final class MeteoLoader {
         client.request(url: url) { result in
             switch result {
             case let .success((data, response)):
-                completion(MeteoItemReceived.decode(data: data, response: response))
+                completion(self.decode(data: data, response: response))
             case let .failure(error):
                 completion(.failure(error))
             }
         }
     }
-}
-
-final class MeteoItemReceived {
-    private init() {}
-    
-    static func decode(data: Data, response: HTTPURLResponse) -> Result<MeteoModel, Error> {
+    func decode(data: Data, response: HTTPURLResponse) -> Result<MeteoModel, Error> {
         guard response.statusCode == 200 else {
             return .failure(APIError.invalidResponse)
         }

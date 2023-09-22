@@ -19,7 +19,6 @@ class WeatherController: UIViewController {
     @IBOutlet weak var newYorkSkyLabel: UILabel!
     @IBOutlet weak var newYorkClimateLabel: UILabel!
     @IBOutlet weak var newYorkCityIconImage: UIImageView!
-    let loader = MeteoLoader()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +32,7 @@ class WeatherController: UIViewController {
     }
     
     func loadingMeteo(lat: Double, lon: Double, cityName: UILabel, skyDescription: UILabel, climateDescription: UILabel, icon: UIImageView) {
+        let loader = MeteoLoader()
         loader.load(lat: lat, lon: lon) {result in
             DispatchQueue.main.async {
                 switch result {

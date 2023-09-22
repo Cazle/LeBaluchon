@@ -7,7 +7,7 @@ class TranslateController: UIViewController{
         super.viewDidLoad()
         }
     let translate = TranslateCallAPI()
-    let url = TranslationEndpoint.translationUrl.url(baseURL: URL(string: "https://translation.googleapis.com")!, textToTranslate: "Je m'appelle Kyllian")
+    let url = TranslationEndpoint.translationUrl("Je m'appelle Kyllian").url(baseURL: URL(string: "https://translation.googleapis.com")!)
     
     @IBAction func translateButton(_ sender: UIButton) {
         translate.testAPI(url: url) { result in

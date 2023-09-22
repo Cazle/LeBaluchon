@@ -2,10 +2,11 @@ import Foundation
 
 struct TranslateModel: Decodable {
     
-    struct data: Codable {
-        struct translations: Codable {
+    struct TranslateDatas: Codable {
+        let translation: Translations
+        struct Translations: Codable {
             let translatedText: String
         }
     }
-    let datas: [data]
+    let datas: [TranslateDatas]
 }
