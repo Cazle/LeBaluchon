@@ -12,7 +12,7 @@ enum TranslationEndpoint {
         switch self {
         case let .translationUrl(value):
             components.queryItems = []
-            components.queryItems?.append(.init(name: "key", value: "AIzaSyA2qvpIyL4AjYrMrmxCWfa-4Uz1QCyaZWg"))
+            components.queryItems?.append(.init(name: "key", value: ""))
             components.queryItems?.append(.init(name: "q", value: "\(value)"))
             components.queryItems?.append(.init(name: "en", value: "en"))
         }
