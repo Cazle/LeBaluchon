@@ -26,11 +26,6 @@ class TranslateCallAPI {
         guard let decoder = try? JSONDecoder().decode(TranslateModel.self, from: data) else{
             return emptyModel
         }
-        for datas in decoder.datas {
-            datas.translation.translatedText
-            print(datas.translation.translatedText)
-            print(datas.translation)
-        }
         print(decoder)
         return decoder
     }

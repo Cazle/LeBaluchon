@@ -37,10 +37,10 @@ class WeatherController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
-                    if let name = data.name {
+                    let name = data.name
                         cityName.text = name
-                    }
-                    if let weather = data.weather {
+                    let weather = data.weather
+                    
                         for weatherDatas in weather {
                             skyDescription.text = weatherDatas.description
                             climateDescription.text = weatherDatas.main
@@ -48,7 +48,7 @@ class WeatherController: UIViewController {
                                 icon.image = img
                             }
                         }
-                    }
+                    
                 case .failure(let error):
                     self.presentAlert()
                     print("C'est l'erreur du viewController \(error)")
