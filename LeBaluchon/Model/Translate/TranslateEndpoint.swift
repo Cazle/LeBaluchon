@@ -14,7 +14,9 @@ enum TranslationEndpoint {
             components.queryItems = []
             components.queryItems?.append(.init(name: "key", value: ""))
             components.queryItems?.append(.init(name: "q", value: "\(value)"))
-            components.queryItems?.append(.init(name: "en", value: "en"))
+            components.queryItems?.append(.init(name: "source", value: "fr"))
+            components.queryItems?.append(.init(name: "target", value: "en"))
+            components.queryItems?.append(.init(name: "format", value: "text"))
         }
         return components.url!
     }

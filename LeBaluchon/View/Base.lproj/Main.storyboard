@@ -161,7 +161,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbO-Lt-PNy">
-                                <rect key="frame" x="175" y="431" width="65" height="35"/>
+                                <rect key="frame" x="174.66666666666666" y="430.66666666666669" width="65" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="TEST"/>
                                 <connections>
@@ -173,11 +173,9 @@
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <color key="tintColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="top" secondItem="BLi-Cn-CAl" secondAttribute="bottom" constant="330" id="IJ8-xg-1QJ"/>
-                            <constraint firstItem="w9y-OP-dHP" firstAttribute="bottom" secondItem="xbO-Lt-PNy" secondAttribute="bottom" constant="347" id="NZG-4h-9pn"/>
                             <constraint firstItem="BLi-Cn-CAl" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="OqK-eP-WQU"/>
-                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="leading" secondItem="w9y-OP-dHP" secondAttribute="leading" constant="175" id="bkM-CV-EwZ"/>
-                            <constraint firstItem="w9y-OP-dHP" firstAttribute="trailing" secondItem="xbO-Lt-PNy" secondAttribute="trailing" constant="174" id="eBo-HM-D3k"/>
+                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="kBo-mu-wHD"/>
+                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="centerY" secondItem="Y0I-Jp-XIo" secondAttribute="centerY" id="wsZ-W3-yHo"/>
                             <constraint firstItem="BLi-Cn-CAl" firstAttribute="top" secondItem="w9y-OP-dHP" secondAttribute="top" constant="10" id="xVD-hW-cCf"/>
                         </constraints>
                     </view>

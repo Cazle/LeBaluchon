@@ -1,14 +1,14 @@
 import Foundation
 
-final class MeteoLoader {
+final class TranslateLoader {
     private let client: HTTPClient
     
     init(client: HTTPClient = URLSessionHTTPClient(session: URLSession(configuration: .default))) {
         self.client = client
     }
     
-    func load(lat: Double, lon: Double, completion: @escaping (Result<MeteoModel, Error>) -> Void) {
-        let url = MeteoEndpoint.cityLocation(lat, lon).url(baseURL: URL(string: "https://api.openweathermap.org")!)
+    func load(text: String, completion: @escaping (Result<TranslateModel, Error>) -> Void) {
+        let url = TranslationEndpoint.translationUrl(text).url(baseURL: URL(string: "https://translation.googleapis.com")!)
         client.request(url: url) { result in
             switch result {
             case let .success((data, response)):
@@ -18,11 +18,12 @@ final class MeteoLoader {
             }
         }
     }
-    func decode(data: Data, response: HTTPURLResponse) -> Result<MeteoModel, Error> {
+    func decode(data: Data, response: HTTPURLResponse) -> Result<TranslateModel, Error> {
         guard response.statusCode == 200 else {
+            print(response.statusCode)
             return .failure(APIError.invalidResponse)
         }
-        guard let dataDecoded = try? JSONDecoder().decode(MeteoModel.self, from: data) else {
+        guard let dataDecoded = try? JSONDecoder().decode(TranslateModel.self, from: data) else {
             return .failure(APIError.invalidDecoding)
         }
         

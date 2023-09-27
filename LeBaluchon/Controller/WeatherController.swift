@@ -40,7 +40,6 @@ class WeatherController: UIViewController {
                     let name = data.name
                         cityName.text = name
                     let weather = data.weather
-                    
                         for weatherDatas in weather {
                             skyDescription.text = weatherDatas.description
                             climateDescription.text = weatherDatas.main
@@ -48,7 +47,6 @@ class WeatherController: UIViewController {
                                 icon.image = img
                             }
                         }
-                    
                 case .failure(let error):
                     self.presentAlert()
                     print("C'est l'erreur du viewController \(error)")
