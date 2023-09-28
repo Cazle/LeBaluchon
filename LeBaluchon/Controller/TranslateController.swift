@@ -2,17 +2,16 @@ import UIKit
 
 class TranslateController: UIViewController{
     
-    @IBOutlet weak var translationTextField: UITextField!
+    @IBOutlet weak var textToTranslateTextView: UITextView!
     @IBOutlet weak var textTranslatedTextView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     let translate = TranslateLoader()
-    let url = TranslationEndpoint.translationUrl("").url(baseURL: URL(string: "https://translation.googleapis.com")!)
     
     @IBAction func translateButton(_ sender: UIButton) {
-        translate.load(text: "\(translationTextField.text ?? "")") { result in
+        translate.load(text: "\(textToTranslateTextView.text ?? "")") { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case let .success(translation):
@@ -20,7 +19,7 @@ class TranslateController: UIViewController{
                     let gettingTheArrayOfTranslations = translatedDatas.translations
                     
                     for datasTranslated in gettingTheArrayOfTranslations {
-                        self.textTranslatedTextView.text = datasTranslated.translatedText
+                        self?.textTranslatedTextView.text = datasTranslated.translatedText
                     }
                 case let .failure(APIError):
                     print(APIError, "Je suis une erreur")

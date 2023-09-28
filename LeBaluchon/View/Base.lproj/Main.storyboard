@@ -161,40 +161,56 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbO-Lt-PNy">
-                                <rect key="frame" x="174.66666666666666" y="430.66666666666669" width="65" height="34.666666666666686"/>
+                                <rect key="frame" x="155.66666666666666" y="648.33333333333337" width="102.99999999999997" height="34.333333333333371"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="TEST"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Translate !"/>
                                 <connections>
                                     <action selector="translateButton:" destination="LGh-By-4xj" eventType="touchUpInside" id="CqL-cz-P5X"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a translation here" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HVc-SU-8Bp">
-                                <rect key="frame" x="105.00000000000001" y="364" width="204.33333333333337" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-xX-rsd">
-                                <rect key="frame" x="87" y="502" width="240" height="128"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Entrez votre dans le premier carré traduction ci-dessous !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNi-lu-GAA">
+                                <rect key="frame" x="33" y="165" width="349" height="72"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-fZ-r69">
+                                <rect key="frame" x="87" y="268" width="240" height="360.66666666666663"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wx5-i4-CdV">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="174"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-xX-rsd">
+                                        <rect key="frame" x="0.0" y="194" width="240" height="166.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Wx5-i4-CdV" firstAttribute="leading" secondItem="Afd-xX-rsd" secondAttribute="leading" id="YxY-F5-kYX"/>
+                                    <constraint firstItem="Wx5-i4-CdV" firstAttribute="leading" secondItem="ae5-fZ-r69" secondAttribute="leadingMargin" id="pRI-GC-u8j"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w9y-OP-dHP"/>
                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
                         <color key="tintColor" systemColor="systemPinkColor"/>
                         <constraints>
-                            <constraint firstItem="w9y-OP-dHP" firstAttribute="bottom" secondItem="Afd-xX-rsd" secondAttribute="bottom" constant="183" id="2Jj-za-iHO"/>
-                            <constraint firstItem="w9y-OP-dHP" firstAttribute="trailing" secondItem="Afd-xX-rsd" secondAttribute="trailing" constant="87" id="AQs-0h-vw9"/>
-                            <constraint firstItem="Afd-xX-rsd" firstAttribute="leading" secondItem="w9y-OP-dHP" secondAttribute="leading" constant="87" id="Fbe-YS-oJA"/>
+                            <constraint firstItem="ae5-fZ-r69" firstAttribute="leading" secondItem="w9y-OP-dHP" secondAttribute="leading" constant="87" id="HB2-An-pXf"/>
+                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="top" secondItem="ae5-fZ-r69" secondAttribute="bottom" constant="20" id="HSc-1G-Au2"/>
+                            <constraint firstItem="ae5-fZ-r69" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="Kn5-h6-SlL"/>
                             <constraint firstItem="BLi-Cn-CAl" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="OqK-eP-WQU"/>
-                            <constraint firstItem="HVc-SU-8Bp" firstAttribute="top" secondItem="Y0I-Jp-XIo" secondAttribute="top" constant="364" id="YVN-jW-T72"/>
-                            <constraint firstItem="HVc-SU-8Bp" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="j2C-Bj-7hR"/>
-                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="kBo-mu-wHD"/>
-                            <constraint firstItem="Afd-xX-rsd" firstAttribute="top" secondItem="xbO-Lt-PNy" secondAttribute="bottom" constant="36.670000000000002" id="mIm-8o-1WK"/>
-                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="centerY" secondItem="Y0I-Jp-XIo" secondAttribute="centerY" id="wsZ-W3-yHo"/>
+                            <constraint firstItem="ae5-fZ-r69" firstAttribute="centerY" secondItem="Y0I-Jp-XIo" secondAttribute="centerY" id="bUu-GI-non"/>
+                            <constraint firstItem="xbO-Lt-PNy" firstAttribute="centerX" secondItem="Y0I-Jp-XIo" secondAttribute="centerX" id="vu1-Pg-2gX"/>
                             <constraint firstItem="BLi-Cn-CAl" firstAttribute="top" secondItem="w9y-OP-dHP" secondAttribute="top" constant="10" id="xVD-hW-cCf"/>
+                            <constraint firstItem="w9y-OP-dHP" firstAttribute="bottom" secondItem="ae5-fZ-r69" secondAttribute="bottom" constant="184.66666666666674" id="ykC-VD-cbE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Traduction" id="Tyn-h2-l9c">
@@ -202,8 +218,8 @@
                         <color key="badgeColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="textToTranslateTextView" destination="Wx5-i4-CdV" id="hDr-gp-eiI"/>
                         <outlet property="textTranslatedTextView" destination="Afd-xX-rsd" id="G40-KY-mA2"/>
-                        <outlet property="translationTextField" destination="HVc-SU-8Bp" id="Gw7-KQ-nGC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93Q-WK-grF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  LeBaluchon
-//
-//  Created by Kyllian GUILLOT on 05/09/2023.
-//
-
 import UIKit
 
 class WeatherController: UIViewController {
-    
     
     @IBOutlet weak var laRochelleNameLabel: UILabel!
     @IBOutlet weak var laRochelleSkyLabel: UILabel!
@@ -20,10 +12,34 @@ class WeatherController: UIViewController {
     @IBOutlet weak var newYorkClimateLabel: UILabel!
     @IBOutlet weak var newYorkCityIconImage: UIImageView!
     
+    let loader = MeteoLoader()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loadingMeteo(lat: 46.167, lon: -1.150, cityName: self.laRochelleNameLabel, skyDescription: self.laRochelleSkyLabel, climateDescription: self.laRochelleClimateLabel, icon: self.laRochelleIconImage)
-        loadingMeteo(lat: 40.7143, lon: -74.006, cityName: self.newYorkNameLabel, skyDescription: self.newYorkSkyLabel, climateDescription: self.newYorkClimateLabel, icon: self.newYorkCityIconImage)
+        let group = DispatchGroup()
+        group.enter()
+        DispatchQueue.global().async {
+            self.loadingMeteo(lat: 46.167,
+                              lon: -1.150,
+                              cityName: self.laRochelleNameLabel,
+                              skyDescription: self.laRochelleSkyLabel,
+                              climateDescription: self.laRochelleClimateLabel,
+                              icon: self.laRochelleIconImage)
+            group.leave()
+        }
+        group.enter()
+        DispatchQueue.global().async {
+            self.loadingMeteo(lat: 40.7143,
+                              lon: -74.006,
+                              cityName: self.newYorkNameLabel,
+                              skyDescription: self.newYorkSkyLabel,
+                              climateDescription: self.newYorkClimateLabel,
+                              icon: self.newYorkCityIconImage)
+            group.leave()
+        }
+        group.notify(queue: .main) {
+            print("All loaded")
+        }
     }
     func presentAlert() {
         let alertVC = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
@@ -32,8 +48,7 @@ class WeatherController: UIViewController {
     }
     
     func loadingMeteo(lat: Double, lon: Double, cityName: UILabel, skyDescription: UILabel, climateDescription: UILabel, icon: UIImageView) {
-        let loader = MeteoLoader()
-        loader.load(lat: lat, lon: lon) {result in
+        loader.load(lat: lat, lon: lon) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -43,12 +58,12 @@ class WeatherController: UIViewController {
                         for weatherDatas in weather {
                             skyDescription.text = weatherDatas.description
                             climateDescription.text = weatherDatas.main
-                            self.gettingTheIconImage(id: weatherDatas.icon) {img in
+                            self?.gettingTheIconImage(id: weatherDatas.icon) {img in
                                 icon.image = img
                             }
                         }
                 case .failure(let error):
-                    self.presentAlert()
+                    self?.presentAlert()
                     print("C'est l'erreur du viewController \(error)")
                 }
             }
