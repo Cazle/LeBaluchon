@@ -176,7 +176,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ae5-fZ-r69">
-                                <rect key="frame" x="87" y="268" width="240" height="360.66666666666663"/>
+                                <rect key="frame" x="87" y="267.66666666666663" width="240" height="360.66666666666663"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wx5-i4-CdV">
                                         <rect key="frame" x="0.0" y="0.0" width="240" height="174"/>
