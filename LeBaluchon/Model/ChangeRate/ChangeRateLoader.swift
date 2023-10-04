@@ -8,7 +8,7 @@ final class ChangeRateLoader {
     }
     
     func load(eur: String, dollars: String, amount: Int, completion: @escaping (Result<ChangeRateModel, Error>) -> Void) {
-        let url = ChangeRateEndpoint.euroToDollars(eur, dollars, amount).url(baseURL: URL(string: "http://data.fixer.io/api")!)
+        let url = ChangeRateEndpoint.euroToDollars(eur, dollars, amount).url(baseURL: URL(string: "https://data.fixer.io/api")!)
         client.request(url: url) { result in
             switch result {
             case let .success((data, response)):

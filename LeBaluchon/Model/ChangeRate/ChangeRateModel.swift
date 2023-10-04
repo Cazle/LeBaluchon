@@ -2,8 +2,10 @@ import Foundation
 
 struct ChangeRateModel: Decodable {
     let success: Bool
-    let timestamp: Int
-    let base: String
-    let date: String
-    let rates: [String: Int]
+    struct Query: Decodable {
+        let from: String
+        let to: String
+        let amount: Int
+    }
 }
+

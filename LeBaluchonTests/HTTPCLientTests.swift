@@ -44,7 +44,6 @@ final class HTTPClientTests: XCTestCase {
     }
     func test_whenThereIsNoRequestAtAllWithNoDataAndNoResponse() {
         let sut = makeSUT()
-        let unexpectedError = UnexpectedError()
         
         URLProtocolStub.stub(data: nil, response: nil, error: nil)
         let exp = expectation(description: "Wait...")

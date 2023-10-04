@@ -27,6 +27,7 @@
 		29A52FF12ACD5AB5006FD63A /* ChangeRateLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF02ACD5AB5006FD63A /* ChangeRateLoader.swift */; };
 		29A52FF32ACD5AE5006FD63A /* ChangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF22ACD5AE5006FD63A /* ChangeRateModel.swift */; };
 		29A52FF52ACD6105006FD63A /* ChangeRateEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */; };
+		29A52FF72ACD653B006FD63A /* ChangeRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF62ACD653B006FD63A /* ChangeRateController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		29A52FF02ACD5AB5006FD63A /* ChangeRateLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateLoader.swift; sourceTree = "<group>"; };
 		29A52FF22ACD5AE5006FD63A /* ChangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateModel.swift; sourceTree = "<group>"; };
 		29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateEndpoint.swift; sourceTree = "<group>"; };
+		29A52FF62ACD653B006FD63A /* ChangeRateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				2995FA292AA763C20078D598 /* WeatherController.swift */,
 				292D22872ABC330E002542E0 /* TranslateController.swift */,
+				29A52FF62ACD653B006FD63A /* ChangeRateController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				292D22822ABAF497002542E0 /* TranslateModel.swift in Sources */,
 				29182D4B2AB062BA00D94FE8 /* HTTPClient.swift in Sources */,
 				29182D4D2AB06C2B00D94FE8 /* MeteoEndpoint.swift in Sources */,
+				29A52FF72ACD653B006FD63A /* ChangeRateController.swift in Sources */,
 				2995FA3E2AAB1B180078D598 /* MeteoModel.swift in Sources */,
 				29A52FF12ACD5AB5006FD63A /* ChangeRateLoader.swift in Sources */,
 				2995FA402AAB1F690078D598 /* APIError.swift in Sources */,
