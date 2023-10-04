@@ -1,0 +1,28 @@
+{
+  "configurations" : [
+    {
+      "id" : "55325EA8-9BAA-4B58-939E-BCF8005F0392",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:LeBaluchon.xcodeproj",
+      "identifier" : "2995FA212AA763C20078D598",
+      "name" : "LeBaluchon"
+    }
+  },
+  "testTargets" : [
+    {
+      "target" : {
+        "containerPath" : "container:LeBaluchon.xcodeproj",
+        "identifier" : "292D22902ACAB313002542E0",
+        "name" : "LeBaluchonTests"
+      }
+    }
+  ],
+  "version" : 1
+}
