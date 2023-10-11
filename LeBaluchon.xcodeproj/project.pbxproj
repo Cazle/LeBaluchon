@@ -28,6 +28,7 @@
 		29A52FF32ACD5AE5006FD63A /* ChangeRateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF22ACD5AE5006FD63A /* ChangeRateModel.swift */; };
 		29A52FF52ACD6105006FD63A /* ChangeRateEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */; };
 		29A52FF72ACD653B006FD63A /* ChangeRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF62ACD653B006FD63A /* ChangeRateController.swift */; };
+		29A910B52AD6DA1D00CD75FE /* DataSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910B42AD6DA1D00CD75FE /* DataSymbols.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		29A52FF22ACD5AE5006FD63A /* ChangeRateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateModel.swift; sourceTree = "<group>"; };
 		29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateEndpoint.swift; sourceTree = "<group>"; };
 		29A52FF62ACD653B006FD63A /* ChangeRateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateController.swift; sourceTree = "<group>"; };
+		29A910B42AD6DA1D00CD75FE /* DataSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSymbols.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -193,6 +195,7 @@
 				29A52FF02ACD5AB5006FD63A /* ChangeRateLoader.swift */,
 				29A52FF22ACD5AE5006FD63A /* ChangeRateModel.swift */,
 				29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */,
+				29A910B42AD6DA1D00CD75FE /* DataSymbols.swift */,
 			);
 			path = ChangeRate;
 			sourceTree = "<group>";
@@ -315,6 +318,7 @@
 				29A52FF52ACD6105006FD63A /* ChangeRateEndpoint.swift in Sources */,
 				29A52FF32ACD5AE5006FD63A /* ChangeRateModel.swift in Sources */,
 				292D22882ABC330E002542E0 /* TranslateController.swift in Sources */,
+				29A910B52AD6DA1D00CD75FE /* DataSymbols.swift in Sources */,
 				292D22822ABAF497002542E0 /* TranslateModel.swift in Sources */,
 				29182D4B2AB062BA00D94FE8 /* HTTPClient.swift in Sources */,
 				29182D4D2AB06C2B00D94FE8 /* MeteoEndpoint.swift in Sources */,
