@@ -1,20 +1,19 @@
 import Foundation
 
 enum ChangeRateEndpoint {
-    case euroToDollars(String, String, Int)
+    case euroToDollars(String, String)
     
     func url(baseURL: URL) -> URL {
         var components = URLComponents()
         components.scheme = baseURL.scheme
         components.host = baseURL.host
-        components.path = "/convert"
+        components.path = "/latest"
         switch self {
-        case let .euroToDollars(eur, dollars, amount):
+        case let .euroToDollars(from, to):
             components.queryItems = []
             components.queryItems?.append(.init(name: "access_key", value: ""))
-            components.queryItems?.append(.init(name: "from", value: "\(eur)"))
-            components.queryItems?.append(.init(name: "to", value: "\(dollars)"))
-            components.queryItems?.append(.init(name: "amount", value: "\(amount)"))
+            components.queryItems?.append(.init(name: "base", value: "\(from)"))
+            components.queryItems?.append(.init(name: "symbols", value: "\(to)"))
             
         }
         return components.url!

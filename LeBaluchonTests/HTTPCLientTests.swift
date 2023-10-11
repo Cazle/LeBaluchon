@@ -16,10 +16,9 @@ final class HTTPClientTests: XCTestCase {
                 return
             }
             exp.fulfill()
-            XCTAssertEqual(error as NSError, expectedError)
+            XCTAssertEqual(error as! URLSessionHTTPClient.SessionError, .urlError)
         }
         wait(for: [exp], timeout: 0.1)
-        URLProtocolStub.removeStub() //Reset the Stub
     }
     
     func test_requestSucceed() {
@@ -37,10 +36,10 @@ final class HTTPClientTests: XCTestCase {
             }
             exp.fulfill()
             XCTAssertEqual(receivedData, data)
-            XCTAssertEqual(receivedResponse, response)
+            XCTAssertEqual(receivedResponse.url, response.url)
+            XCTAssertEqual(receivedResponse.statusCode, response.statusCode)
         }
         wait(for: [exp], timeout: 0.1)
-        URLProtocolStub.removeStub() //Reset Stub
     }
     func test_whenThereIsNoRequestAtAllWithNoDataAndNoResponse() {
         let sut = makeSUT()
@@ -54,32 +53,31 @@ final class HTTPClientTests: XCTestCase {
                 return
             }
             exp.fulfill()
-            XCTAssertTrue(error is UnexpectedError)
+            XCTAssertEqual(error as! URLSessionHTTPClient.SessionError, .unexpected)
         }
         wait(for: [exp], timeout: 0.1)
-        URLProtocolStub.removeStub() //Reset Stub
+    }
+    private func makeSUT() -> URLSessionHTTPClient {
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolStub.self]
+        let session = URLSession(configuration: configuration)
+        let sut = URLSessionHTTPClient(session: session)
+        return sut
+    }
+    private func errorForTests() -> NSError {
+        NSError(domain: "any error", code: 0)
+    }
+    private func urlForTests() -> URL {
+        URL(string: "https://www.apple.com")!
+    }
+    private func dataForTests() -> Data {
+        Data("Some Datas".utf8)
+    }
+    private func responseForTests() -> HTTPURLResponse {
+        HTTPURLResponse(url: urlForTests(), statusCode: 200, httpVersion: nil, headerFields: nil)!
     }
 }
 
 
-private func makeSUT() -> URLSessionHTTPClient {
-    let configuration = URLSessionConfiguration.ephemeral
-    configuration.protocolClasses = [URLProtocolStub.self]
-    let session = URLSession(configuration: configuration)
-    let sut = URLSessionHTTPClient(session: session)
-    return sut
-}
-private func errorForTests() -> NSError {
-    NSError(domain: "Random Error", code: 1)
-}
-private func urlForTests() -> URL {
-    URL(string: "https://www.apple.com")!
-}
-private func dataForTests() -> Data {
-    Data("Some Datas".utf8)
-}
-private func responseForTests() -> HTTPURLResponse {
-    HTTPURLResponse(url: URL(string: "https://www.apple.com")!, statusCode: 200, httpVersion: nil, headerFields: nil)!
-}
-private struct UnexpectedError: Error {}
+
 

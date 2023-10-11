@@ -13,18 +13,21 @@ final class URLSessionHTTPClient: HTTPClient {
         self.session = session
     }
     
-    struct UnexpectedError: Error {}
+    enum SessionError: Error {
+        case urlError
+        case unexpected
+    }
     
     func request(url: URL, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
         session.dataTask(with: url) {data, response, error in
             if let error {
-                completion(.failure(error))
+                completion(.failure(SessionError.urlError))
                 return
             } else if let data, let response = response as? HTTPURLResponse {
                 completion(.success((data, response)))
                 return
             } else {
-                completion(.failure(UnexpectedError()))
+                completion(.failure(SessionError.unexpected))
             }
         }.resume()
     }

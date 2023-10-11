@@ -7,8 +7,8 @@ final class ChangeRateLoader {
         self.client = client
     }
     
-    func load(eur: String, dollars: String, amount: Int, completion: @escaping (Result<ChangeRateModel, Error>) -> Void) {
-        let url = ChangeRateEndpoint.euroToDollars(eur, dollars, amount).url(baseURL: URL(string: "https://data.fixer.io/api")!)
+    func load(from: String, to: String, completion: @escaping (Result<ChangeRateModel, Error>) -> Void) {
+        let url = ChangeRateEndpoint.euroToDollars(from, to).url(baseURL: URL(string: "http://data.fixer.io/api")!)
         client.request(url: url) { result in
             switch result {
             case let .success((data, response)):
@@ -23,6 +23,7 @@ final class ChangeRateLoader {
             return .failure(APIError.invalidResponse)
         }
         guard let dataDecoded = try? JSONDecoder().decode(ChangeRateModel.self, from: data) else {
+            print(String(data: data, encoding: .utf8) ?? "")
             return .failure(APIError.invalidDecoding)
         }
         
