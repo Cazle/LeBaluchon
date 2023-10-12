@@ -1,5 +1,6 @@
 import UIKit
 
+
 class WeatherController: UIViewController {
     
     @IBOutlet weak var laRochelleNameLabel: UILabel!
@@ -13,6 +14,7 @@ class WeatherController: UIViewController {
     @IBOutlet weak var newYorkCityIconImage: UIImageView!
     
     let loader = MeteoLoader()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,8 +60,14 @@ class WeatherController: UIViewController {
                         for weatherDatas in weather {
                             skyDescription.text = weatherDatas.description
                             climateDescription.text = weatherDatas.main
-                            self?.gettingTheIconImage(id: weatherDatas.icon) {img in
-                                icon.image = img
+                            getIconImage(id: weatherDatas.icon) {result in
+                                switch result {
+                                case let .success(image):
+                                    let img = UIImage(data: image)
+                                    icon.image = img
+                                case .failure(_):
+                                    self?.presentAlert()
+                                }
                             }
                         }
                 case .failure(let error):
@@ -68,18 +76,6 @@ class WeatherController: UIViewController {
                 }
             }
         }
-    }
-    func gettingTheIconImage(id: String, completion: @escaping (UIImage?) -> Void) {
-        let url = URL(string: "https://openweathermap.org/img/wn/\(id)@2x.png")!
-        URLSession.shared.dataTask(with: url) {data, response, error in
-            DispatchQueue.main.async {
-                if let data = data, let image = UIImage(data: data) {
-                    completion(image)
-                } else {
-                    completion(nil)
-                }
-            }
-        }.resume()
     }
 }
 

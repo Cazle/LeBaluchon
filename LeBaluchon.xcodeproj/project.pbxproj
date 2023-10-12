@@ -29,6 +29,7 @@
 		29A52FF52ACD6105006FD63A /* ChangeRateEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */; };
 		29A52FF72ACD653B006FD63A /* ChangeRateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A52FF62ACD653B006FD63A /* ChangeRateController.swift */; };
 		29A910B52AD6DA1D00CD75FE /* DataSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910B42AD6DA1D00CD75FE /* DataSymbols.swift */; };
+		29A910B72AD83E0300CD75FE /* IconLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910B62AD83E0300CD75FE /* IconLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		29A52FF42ACD6105006FD63A /* ChangeRateEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateEndpoint.swift; sourceTree = "<group>"; };
 		29A52FF62ACD653B006FD63A /* ChangeRateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeRateController.swift; sourceTree = "<group>"; };
 		29A910B42AD6DA1D00CD75FE /* DataSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSymbols.swift; sourceTree = "<group>"; };
+		29A910B62AD83E0300CD75FE /* IconLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				29182D4E2AB06D5300D94FE8 /* MeteoLoader.swift */,
 				2995FA3D2AAB1B180078D598 /* MeteoModel.swift */,
 				29182D4C2AB06C2B00D94FE8 /* MeteoEndpoint.swift */,
+				29A910B62AD83E0300CD75FE /* IconLoader.swift */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				29A52FF12ACD5AB5006FD63A /* ChangeRateLoader.swift in Sources */,
 				2995FA402AAB1F690078D598 /* APIError.swift in Sources */,
 				2995FA282AA763C20078D598 /* SceneDelegate.swift in Sources */,
+				29A910B72AD83E0300CD75FE /* IconLoader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
