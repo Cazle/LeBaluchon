@@ -7,8 +7,8 @@ final class MeteoLoader {
         self.client = client
     }
     
-    func load(lat: Double, lon: Double, completion: @escaping (Result<MeteoModel, Error>) -> Void) {
-        let url = MeteoEndpoint.cityLocation(lat, lon).url(baseURL: URL(string: "https://api.openweathermap.org")!)
+    func load(id: Int, completion: @escaping (Result<MeteoModel, Error>) -> Void) {
+        let url = MeteoEndpoint.cityLocation(id).url(baseURL: URL(string: "https://api.openweathermap.org")!)
         client.request(url: url) { result in
             switch result {
             case let .success((data, response)):

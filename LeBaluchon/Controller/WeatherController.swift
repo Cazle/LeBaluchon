@@ -21,8 +21,7 @@ class WeatherController: UIViewController {
         let group = DispatchGroup()
         group.enter()
         DispatchQueue.global().async {
-            self.loadingMeteo(lat: 46.167,
-                              lon: -1.150,
+            self.loadingMeteo(id: 3006787,
                               cityName: self.laRochelleNameLabel,
                               skyDescription: self.laRochelleSkyLabel,
                               climateDescription: self.laRochelleClimateLabel,
@@ -31,8 +30,7 @@ class WeatherController: UIViewController {
         }
         group.enter()
         DispatchQueue.global().async {
-            self.loadingMeteo(lat: 40.7143,
-                              lon: -74.006,
+            self.loadingMeteo(id: 5128581,
                               cityName: self.newYorkNameLabel,
                               skyDescription: self.newYorkSkyLabel,
                               climateDescription: self.newYorkClimateLabel,
@@ -49,8 +47,8 @@ class WeatherController: UIViewController {
         present(alertVC, animated: true, completion: nil)
     }
     
-    func loadingMeteo(lat: Double, lon: Double, cityName: UILabel, skyDescription: UILabel, climateDescription: UILabel, icon: UIImageView) {
-        loader.load(lat: lat, lon: lon) { [weak self] result in
+    func loadingMeteo(id: Int, cityName: UILabel, skyDescription: UILabel, climateDescription: UILabel, icon: UIImageView) {
+        loader.load(id: id) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
