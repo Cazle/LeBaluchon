@@ -18,16 +18,23 @@ class MeteoLoaderTests: XCTestCase {
         let clientStub = ClientStub(result: .success((correctData(), correctResponse())))
         
         let client = MeteoLoader(client: clientStub)
-        print(clientStub.result)
+        let exp = expectation(description: "Waiting...")
         
-        client.load(id: 1) {result in
+        client.load(id: fakeID()) {result in
             switch result {
             case let .success(data):
-                print("Je suis un succès",data)
+                exp.fulfill()
+                XCTAssertEqual(data.name, "Zocca")
+                for datas in data.weather {
+                    XCTAssertEqual(datas.description, "moderate rain")
+                    XCTAssertEqual(datas.main, "Rain")
+                    XCTAssertEqual(datas.icon, "10d")
+                }
             case let .failure(error):
                 print("Je suis une erreur", error)
             }
         }
+        wait(for: [exp], timeout: 0.2)
     }
     func correctData() -> Data {
         Data(WeatherDatas.utf8)
@@ -37,5 +44,8 @@ class MeteoLoaderTests: XCTestCase {
     }
     func correctURL() -> URL {
         URL(string: "https://apple.com")!
+    }
+    func fakeID() -> Int {
+        12345
     }
 }

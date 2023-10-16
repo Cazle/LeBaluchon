@@ -32,6 +32,7 @@
 		29A910B72AD83E0300CD75FE /* IconLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910B62AD83E0300CD75FE /* IconLoader.swift */; };
 		29A910B92ADD2B7C00CD75FE /* MeteoLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910B82ADD2B7C00CD75FE /* MeteoLoaderTests.swift */; };
 		29A910BF2ADD400C00CD75FE /* WeatherDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910BE2ADD400C00CD75FE /* WeatherDatas.swift */; };
+		29A910C32ADD685F00CD75FE /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910C22ADD685F00CD75FE /* AlertError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +75,7 @@
 		29A910B62AD83E0300CD75FE /* IconLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconLoader.swift; sourceTree = "<group>"; };
 		29A910B82ADD2B7C00CD75FE /* MeteoLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoLoaderTests.swift; sourceTree = "<group>"; };
 		29A910BE2ADD400C00CD75FE /* WeatherDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDatas.swift; sourceTree = "<group>"; };
+		29A910C22ADD685F00CD75FE /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 				2995FA292AA763C20078D598 /* WeatherController.swift */,
 				292D22872ABC330E002542E0 /* TranslateController.swift */,
 				29A52FF62ACD653B006FD63A /* ChangeRateController.swift */,
+				29A910C22ADD685F00CD75FE /* AlertError.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				29A52FF72ACD653B006FD63A /* ChangeRateController.swift in Sources */,
 				2995FA3E2AAB1B180078D598 /* MeteoModel.swift in Sources */,
 				29A52FF12ACD5AB5006FD63A /* ChangeRateLoader.swift in Sources */,
+				29A910C32ADD685F00CD75FE /* AlertError.swift in Sources */,
 				2995FA402AAB1F690078D598 /* APIError.swift in Sources */,
 				2995FA282AA763C20078D598 /* SceneDelegate.swift in Sources */,
 				29A910B72AD83E0300CD75FE /* IconLoader.swift in Sources */,

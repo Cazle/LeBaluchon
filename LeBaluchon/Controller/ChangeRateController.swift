@@ -1,18 +1,14 @@
 import Foundation
 import UIKit
 
-class ChangeRateController: UIViewController {
+final class ChangeRateController: UIViewController {
     
     @IBOutlet weak var amountOfCurrencyTextView: UITextView!
     @IBOutlet weak var amountConvertedCurrencyTextView: UITextView!
     
-    var selectedCurrencyOnThePickerView: String?
+    private var selectedCurrencyOnThePickerView: String?
     
-    
-    override func viewDidLoad() {
-
-    }
-    let loader = ChangeRateLoader()
+    private let loader = ChangeRateLoader()
     
     @IBAction func tapButtonToGetChangeRate(_ sender: Any) {
         guard let selectedCurrency = selectedCurrencyOnThePickerView else {
@@ -26,6 +22,10 @@ class ChangeRateController: UIViewController {
                     let dataArray = data.rates
                     guard let currency = dataArray.first?.value else { return }
                     guard let amount = Double(self?.amountOfCurrencyTextView.text ?? "") else { return }
+                    guard amount.isNaN == false else {
+                        self?.presentAlert(message: "Veuillez rentrer un chiffre ou un nombre.")
+                        return
+                    }
                     
                     let multiplication = currency * amount
                     let result = String(multiplication)
@@ -49,12 +49,12 @@ extension ChangeRateController: UIPickerViewDataSource {
 }
 extension ChangeRateController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let currencyNames = Array(allCurrencies.values)
+        let currencyNames = Array(allCurrencies.values).sorted()
         return currencyNames[row]
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedName = Array(allCurrencies.values)[row]
+        let selectedName = Array(allCurrencies.values).sorted()[row]
         selectedCurrencyOnThePickerView = allCurrencies.first { $0.value == selectedName }?.key
     }
 }

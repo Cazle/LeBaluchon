@@ -1,7 +1,7 @@
 import UIKit
 
 
-class WeatherController: UIViewController {
+final class WeatherController: UIViewController {
     
     @IBOutlet weak var laRochelleNameLabel: UILabel!
     @IBOutlet weak var laRochelleSkyLabel: UILabel!
@@ -13,7 +13,7 @@ class WeatherController: UIViewController {
     @IBOutlet weak var newYorkClimateLabel: UILabel!
     @IBOutlet weak var newYorkCityIconImage: UIImageView!
     
-    let loader = MeteoLoader()
+    private let loader = MeteoLoader()
     
     
     override func viewDidLoad() {
@@ -37,17 +37,9 @@ class WeatherController: UIViewController {
                               icon: self.newYorkCityIconImage)
             group.leave()
         }
-        group.notify(queue: .main) {
-            print("All loaded")
-        }
-    }
-    func presentAlert() {
-        let alertVC = UIAlertController(title: "Error", message: "Something went wrong", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
     }
     
-    func loadingMeteo(id: Int, cityName: UILabel, skyDescription: UILabel, climateDescription: UILabel, icon: UIImageView) {
+    private func loadingMeteo(id: Int, cityName: UILabel, skyDescription: UILabel, climateDescription: UILabel, icon: UIImageView) {
         loader.load(id: id) { [weak self] result in
             DispatchQueue.main.async {
                 switch result {
@@ -55,22 +47,21 @@ class WeatherController: UIViewController {
                     let name = data.name
                         cityName.text = name
                     let weather = data.weather
-                        for weatherDatas in weather {
-                            skyDescription.text = weatherDatas.description
-                            climateDescription.text = weatherDatas.main
-                            getIconImage(id: weatherDatas.icon) {result in
+                    print(weather[0])
+                            skyDescription.text = weather[0].description
+                            climateDescription.text = weather[0].main
+                            getIconImage(id: weather[0].icon) {result in
                                 switch result {
                                 case let .success(image):
                                     let img = UIImage(data: image)
                                     icon.image = img
                                 case .failure(_):
-                                    self?.presentAlert()
+                                    self?.presentAlert(message: "Une erreur s'est produite dans la récupération de l'icône")
                                 }
                             }
-                        }
-                case .failure(let error):
-                    self?.presentAlert()
-                    print("C'est l'erreur du viewController \(error)")
+                        
+                case .failure(_):
+                    self?.presentAlert(message: "Une erreur s'est produite.")
                 }
             }
         }

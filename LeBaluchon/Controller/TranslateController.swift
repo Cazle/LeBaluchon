@@ -1,14 +1,11 @@
 import UIKit
 
-class TranslateController: UIViewController{
+final class TranslateController: UIViewController{
     
     @IBOutlet weak var textToTranslateTextView: UITextView!
     @IBOutlet weak var textTranslatedTextView: UITextView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    let translate = TranslateLoader()
+
+    private let translate = TranslateLoader()
     
     @IBAction func translateButton(_ sender: UIButton) {
         translate.load(text: "\(textToTranslateTextView.text ?? "")") { [weak self] result in
@@ -17,12 +14,10 @@ class TranslateController: UIViewController{
                 case let .success(translation):
                     let translatedDatas = translation.data
                     let gettingTheArrayOfTranslations = translatedDatas.translations
+                    self?.textTranslatedTextView.text = gettingTheArrayOfTranslations[0].translatedText
                     
-                    for datasTranslated in gettingTheArrayOfTranslations {
-                        self?.textTranslatedTextView.text = datasTranslated.translatedText
-                    }
-                case let .failure(APIError):
-                    print(APIError, "Je suis une erreur")
+                case .failure(_):
+                    self?.presentAlert(message: "Une erreur s'est produite pendant la récupération des données.")
                 }
             }
         }

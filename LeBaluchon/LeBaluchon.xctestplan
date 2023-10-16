@@ -4,7 +4,11 @@
       "id" : "55325EA8-9BAA-4B58-939E-BCF8005F0392",
       "name" : "Test Scheme Action",
       "options" : {
-
+        "targetForVariableExpansion" : {
+          "containerPath" : "container:LeBaluchon.xcodeproj",
+          "identifier" : "292D22902ACAB313002542E0",
+          "name" : "LeBaluchonTests"
+        }
       }
     }
   ],
