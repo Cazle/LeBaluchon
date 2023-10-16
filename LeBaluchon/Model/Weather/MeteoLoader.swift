@@ -25,7 +25,6 @@ final class MeteoLoader {
         guard let dataDecoded = try? JSONDecoder().decode(MeteoModel.self, from: data) else {
             return .failure(APIError.invalidDecoding)
         }
-        
         return .success(dataDecoded)
     }
 }

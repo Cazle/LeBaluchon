@@ -10,10 +10,7 @@ class ChangeRateController: UIViewController {
     
     
     override func viewDidLoad() {
-        for currency in allCurrencies {
-            print(currency.key)
-            print(currency.value)
-        }
+
     }
     let loader = ChangeRateLoader()
     
