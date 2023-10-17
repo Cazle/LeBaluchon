@@ -1,11 +1,9 @@
 import Foundation
-
-protocol HTTPClient {
+protocol HTTPClientIcon {
     func request(url: URL,
-                 completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void)
+                 completion: @escaping (Result <Data, Error>) -> Void)
 }
-
-final class URLSessionHTTPClient: HTTPClient {
+final class URLSessionHTTPClientIcon: HTTPClientIcon {
     
     private let session: URLSession
     
@@ -18,13 +16,13 @@ final class URLSessionHTTPClient: HTTPClient {
         case unexpected
     }
     
-    func request(url: URL, completion: @escaping (Result<(Data, HTTPURLResponse), Error>) -> Void) {
+    func request(url: URL, completion: @escaping (Result<Data, Error>) -> Void) {
         session.dataTask(with: url) {data, response, error in
             if error != nil {
                 completion(.failure(SessionError.urlError))
                 return
-            } else if let data, let response = response as? HTTPURLResponse {
-                completion(.success((data, response)))
+            } else if let data {
+                completion(.success(data))
                 return
             } else {
                 completion(.failure(SessionError.unexpected))
@@ -32,4 +30,3 @@ final class URLSessionHTTPClient: HTTPClient {
         }.resume()
     }
 }
-

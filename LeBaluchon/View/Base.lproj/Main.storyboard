@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,7 +16,7 @@
             <objects>
                 <viewController title="Weather" id="IwW-mx-CPe" customClass="WeatherController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgW-0o-trY">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qy9-6Q-TxG">
@@ -151,7 +152,7 @@
             <objects>
                 <viewController title="Traduction" id="LGh-By-4xj" customClass="TranslateController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y0I-Jp-XIo">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLi-Cn-CAl">
@@ -176,29 +177,25 @@
                                 <rect key="frame" x="10" y="114" width="408" height="675"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRADUCTEUR FR → EN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4p-wA-reD">
-                                        <rect key="frame" x="30" y="0.0" width="348" height="165"/>
+                                        <rect key="frame" x="30" y="0.0" width="348" height="221.66666666666666"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="33"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez votre texte dans le premier carré traduction ci-dessous !" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNi-lu-GAA">
-                                        <rect key="frame" x="30" y="170" width="348" height="165"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wx5-i4-CdV">
-                                        <rect key="frame" x="30" y="340" width="348" height="165"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="30" y="226.66666666666669" width="348" height="221.66666666666669"/>
+                                        <color key="backgroundColor" name="HandleDarkApparence"/>
+                                        <color key="tintColor" name="HandleDarkApparence"/>
+                                        <color key="textColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-xX-rsd">
-                                        <rect key="frame" x="30" y="510" width="348" height="165"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="30" y="453.33333333333343" width="348" height="221.66666666666669"/>
+                                        <color key="backgroundColor" name="HandleDarkApparence"/>
+                                        <color key="tintColor" name="HandleDarkApparence"/>
+                                        <color key="textColor" systemColor="systemBlueColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
@@ -206,11 +203,9 @@
                                     <constraint firstItem="Afd-xX-rsd" firstAttribute="leading" secondItem="aTh-58-Y7g" secondAttribute="leading" constant="30" id="Nmv-dX-Cg3"/>
                                     <constraint firstAttribute="trailing" secondItem="Z4p-wA-reD" secondAttribute="trailing" constant="30" id="OOV-l4-bSp"/>
                                     <constraint firstAttribute="trailing" secondItem="Wx5-i4-CdV" secondAttribute="trailing" constant="30" id="T1Q-m2-2YV"/>
-                                    <constraint firstItem="CNi-lu-GAA" firstAttribute="leading" secondItem="aTh-58-Y7g" secondAttribute="leading" constant="30" id="U6y-9r-Ghb"/>
                                     <constraint firstItem="Wx5-i4-CdV" firstAttribute="leading" secondItem="aTh-58-Y7g" secondAttribute="leading" constant="30" id="Wfa-0m-hNs"/>
                                     <constraint firstAttribute="trailing" secondItem="Afd-xX-rsd" secondAttribute="trailing" constant="30" id="YJ0-5g-e9q"/>
                                     <constraint firstItem="Z4p-wA-reD" firstAttribute="leading" secondItem="aTh-58-Y7g" secondAttribute="leading" constant="30" id="a73-di-4zV"/>
-                                    <constraint firstAttribute="trailing" secondItem="CNi-lu-GAA" secondAttribute="trailing" constant="30" id="sAc-4J-2U0"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -248,13 +243,13 @@
         <scene sceneID="oDa-VQ-4X4">
             <objects>
                 <tabBarController id="5c7-IC-0Wh" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="59T-OB-ww2">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" itemPositioning="fill" id="59T-OB-ww2">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBlueColor"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="systemGray2Color"/>
-                        <color key="selectedImageTintColor" systemColor="systemYellowColor"/>
+                        <color key="selectedImageTintColor" systemColor="systemGreenColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="LGh-By-4xj" kind="relationship" relationship="viewControllers" id="ZVL-zd-Mgg"/>
@@ -271,7 +266,7 @@
             <objects>
                 <viewController title="ChangeRate" id="ZGJ-xT-iUx" customClass="ChangeRateController" customModule="LeBaluchon" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ld-dN-RdC">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="428" height="843"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-pN-aPM">
@@ -305,9 +300,9 @@
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" scrollEnabled="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-wb-tQq">
                                         <rect key="frame" x="0.0" y="166.33333333333331" width="368" height="136"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="backgroundColor" name="HandleDarkApparence"/>
+                                        <color key="tintColor" name="HandleDarkApparence"/>
+                                        <color key="textColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" keyboardType="numberPad" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textView>
@@ -322,9 +317,9 @@
                                     </pickerView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3l-r4-pwi">
                                         <rect key="frame" x="0.0" y="498.66666666666663" width="368" height="136"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <color key="textColor" systemColor="labelColor"/>
+                                        <color key="backgroundColor" name="HandleDarkApparence"/>
+                                        <color key="tintColor" name="HandleDarkApparence"/>
+                                        <color key="textColor" systemColor="systemBlueColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="42"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
@@ -376,12 +371,9 @@
         <image name="character.bubble.fill.ja" catalog="system" width="128" height="110"/>
         <image name="dollarsign.arrow.circlepath" catalog="system" width="128" height="112"/>
         <image name="sun.min.fill" catalog="system" width="128" height="123"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="HandleDarkApparence">
+            <color red="0.99999994039535522" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

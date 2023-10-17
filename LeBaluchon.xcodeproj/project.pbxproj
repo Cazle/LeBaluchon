@@ -33,6 +33,7 @@
 		29A910B92ADD2B7C00CD75FE /* MeteoLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910B82ADD2B7C00CD75FE /* MeteoLoaderTests.swift */; };
 		29A910BF2ADD400C00CD75FE /* WeatherDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910BE2ADD400C00CD75FE /* WeatherDatas.swift */; };
 		29A910C32ADD685F00CD75FE /* AlertError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910C22ADD685F00CD75FE /* AlertError.swift */; };
+		29A910C82ADD885700CD75FE /* HTTPClientIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29A910C72ADD885700CD75FE /* HTTPClientIcon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		29A910B82ADD2B7C00CD75FE /* MeteoLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeteoLoaderTests.swift; sourceTree = "<group>"; };
 		29A910BE2ADD400C00CD75FE /* WeatherDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherDatas.swift; sourceTree = "<group>"; };
 		29A910C22ADD685F00CD75FE /* AlertError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertError.swift; sourceTree = "<group>"; };
+		29A910C72ADD885700CD75FE /* HTTPClientIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPClientIcon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,7 +104,7 @@
 				29182D4E2AB06D5300D94FE8 /* MeteoLoader.swift */,
 				2995FA3D2AAB1B180078D598 /* MeteoModel.swift */,
 				29182D4C2AB06C2B00D94FE8 /* MeteoEndpoint.swift */,
-				29A910B62AD83E0300CD75FE /* IconLoader.swift */,
+				29A910C92ADD8A0F00CD75FE /* Icon */,
 			);
 			path = Weather;
 			sourceTree = "<group>";
@@ -228,6 +230,15 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		29A910C92ADD8A0F00CD75FE /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				29A910C72ADD885700CD75FE /* HTTPClientIcon.swift */,
+				29A910B62AD83E0300CD75FE /* IconLoader.swift */,
+			);
+			path = Icon;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -343,6 +354,7 @@
 				2995FA2A2AA763C20078D598 /* WeatherController.swift in Sources */,
 				292D228A2ABD86D9002542E0 /* TranslateEndpoint.swift in Sources */,
 				292D22842ABAF54E002542E0 /* TranslateLoader.swift in Sources */,
+				29A910C82ADD885700CD75FE /* HTTPClientIcon.swift in Sources */,
 				2995FA262AA763C20078D598 /* AppDelegate.swift in Sources */,
 				29182D4F2AB06D5300D94FE8 /* MeteoLoader.swift in Sources */,
 				29A52FF52ACD6105006FD63A /* ChangeRateEndpoint.swift in Sources */,

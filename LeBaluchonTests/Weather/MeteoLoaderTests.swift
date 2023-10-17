@@ -20,7 +20,7 @@ class MeteoLoaderTests: XCTestCase {
         let client = MeteoLoader(client: clientStub)
         let exp = expectation(description: "Waiting...")
         
-        client.load(id: fakeID()) {result in
+        client.load(id: fakeID(), lang: "fr") {result in
             switch result {
             case let .success(data):
                 exp.fulfill()
