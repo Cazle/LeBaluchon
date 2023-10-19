@@ -23,7 +23,6 @@ final class ChangeRateLoader {
             return .failure(APIError.invalidResponse)
         }
         guard let dataDecoded = try? JSONDecoder().decode(ChangeRateModel.self, from: data) else {
-            print(String(data: data, encoding: .utf8) ?? "")
             return .failure(APIError.invalidDecoding)
         }
         

@@ -2,25 +2,25 @@ import Foundation
 import XCTest
 @testable import LeBaluchon
 
-class MeteoLoaderTests: XCTestCase {
+final class ChangeRateLoaderTests: XCTestCase {
     let tools = Tools()
-    
     func test_whenICallTheAPIAndTheRequestIsASuccess() {
         let clientStub = ClientStub(
-            result: .success((tools.correctData(data: weatherDatas),
+            result: .success(((tools.correctData(data: changeRateData)),
                               tools.correctResponse())))
-        
-        let client = MeteoLoader(client: clientStub)
+        let loader = ChangeRateLoader(client: clientStub)
         let exp = expectation(description: "Waiting...")
         
-        client.load(id: 1, lang: "fr") {result in
+        loader.load(from: "EUR", to: "USD") {result in
             switch result {
-            case let .success(data):
+            case let .success(change):
                 exp.fulfill()
-                XCTAssertEqual(data.name, "Zocca")
-                XCTAssertEqual(data.weather[0].description, "moderate rain")
-                XCTAssertEqual(data.weather[0].main, "Rain")
-                XCTAssertEqual(data.weather[0].icon, "10d")
+                XCTAssertEqual(change.success, true)
+                XCTAssertEqual(change.timestamp, 1519296206)
+                XCTAssertEqual(change.base, "EUR")
+                XCTAssertEqual(change.date, "2023-10-04")
+                XCTAssertEqual(change.rates.first?.value, 1.23396)
+                XCTAssertEqual(change.rates.first?.key, "USD")
             case .failure(_):
                 XCTFail("This should not happen")
             }
@@ -28,14 +28,14 @@ class MeteoLoaderTests: XCTestCase {
         wait(for: [exp], timeout: 0.2)
     }
     func test_whenDataIsNotCorrectAndTheLoaderExpectTheCorrectData() {
-        let clientStub = ClientStub(result: 
-                .success((tools.uncorrrectData(),
-                          tools.correctResponse())))
+        let clientStub = ClientStub(
+            result: .success((tools.uncorrrectData(),
+                              tools.correctResponse())))
         
-        let client = MeteoLoader(client: clientStub)
+        let client = ChangeRateLoader(client: clientStub)
         let exp = expectation(description: "Waiting...")
         
-        client.load(id: 1, lang: "fr") {result in
+        client.load(from: "EUR", to: "USD") {result in
             switch result {
             case .success(_):
                 XCTFail("This should not happen")
@@ -47,14 +47,14 @@ class MeteoLoaderTests: XCTestCase {
         wait(for: [exp], timeout: 0.2)
     }
     func test_whenThereIsDataButTheResponseIsFailing() {
-        let clientStub = ClientStub(result: 
-                .success((tools.correctData(data: weatherDatas),
-                          tools.uncorrectResponse())))
+        let clientStub = ClientStub(
+            result: .success((tools.correctData(data: changeRateData),
+                              tools.uncorrectResponse())))
         
-        let client = MeteoLoader(client: clientStub)
+        let client = ChangeRateLoader(client: clientStub)
         let exp = expectation(description: "Waiting...")
         
-        client.load(id: 1, lang: "fr") {result in
+        client.load(from: "EUR", to: "USD") {result in
             switch result {
             case .success(_):
                 XCTFail("This should not happen")
@@ -68,10 +68,10 @@ class MeteoLoaderTests: XCTestCase {
     func test_whenThereIsNoDataAndNoResponse() {
         let clientStub = ClientStub(result: .failure(APIError.unknown))
         
-        let client = MeteoLoader(client: clientStub)
+        let client = ChangeRateLoader(client: clientStub)
         let exp = expectation(description: "Waiting...")
         
-        client.load(id: 1, lang: "fr") {result in
+        client.load(from: "EUR", to: "USD") {result in
             switch result {
             case .success(_):
                 XCTFail("This should not happen")

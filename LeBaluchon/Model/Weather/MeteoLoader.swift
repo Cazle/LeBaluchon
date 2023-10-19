@@ -13,8 +13,8 @@ final class MeteoLoader {
             switch result {
             case let .success((data, response)):
                 completion(self.decode(data: data, response: response))
-            case let .failure(error):
-                completion(.failure(error))
+            case .failure(_):
+                completion(.failure(APIError.unknown))
             }
         }
     }

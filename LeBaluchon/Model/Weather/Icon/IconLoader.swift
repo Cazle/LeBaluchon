@@ -13,8 +13,8 @@ final class IconLoader {
                 switch result {
                 case let .success(data):
                     completion(.success(data))
-                case let.failure(error):
-                    print(error)
+                case .failure(_):
+                    completion(.failure(APIError.invalidData))
                 }
             }
         }
