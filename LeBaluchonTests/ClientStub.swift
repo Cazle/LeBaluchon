@@ -1,7 +1,7 @@
 import Foundation
 @testable import LeBaluchon
 
-class ClientStub: HTTPClient {
+final class ClientStub: HTTPClient {
     let result: Result<(Data, HTTPURLResponse), Error>
     
     init(result: Result<(Data, HTTPURLResponse), Error>) {

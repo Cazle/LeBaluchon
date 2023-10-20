@@ -2,7 +2,7 @@ import Foundation
 import XCTest
 @testable import LeBaluchon
 
-class MeteoLoaderTests: XCTestCase {
+final class MeteoLoaderTests: XCTestCase {
     let tools = Tools()
     
     func test_whenICallTheAPIAndTheRequestIsASuccess() {

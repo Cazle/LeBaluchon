@@ -9,7 +9,8 @@ final class MeteoLoader {
     
     func load(id: Int, lang: String, completion: @escaping (Result<MeteoModel, Error>) -> Void) {
         let url = MeteoEndpoint.cityLocation(id, lang).url(baseURL: URL(string: "https://api.openweathermap.org")!)
-        client.request(url: url) { result in
+        client.request(url: url) {[weak self] result in
+            guard let self else { return }
             switch result {
             case let .success((data, response)):
                 completion(self.decode(data: data, response: response))

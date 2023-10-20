@@ -3,11 +3,14 @@ import XCTest
 @testable import LeBaluchon
 
 final class ChangeRateLoaderTests: XCTestCase {
+    
     let tools = Tools()
+    
     func test_whenICallTheAPIAndTheRequestIsASuccess() {
         let clientStub = ClientStub(
             result: .success(((tools.correctData(data: changeRateData)),
                               tools.correctResponse())))
+        
         let loader = ChangeRateLoader(client: clientStub)
         let exp = expectation(description: "Waiting...")
         
@@ -27,6 +30,7 @@ final class ChangeRateLoaderTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.2)
     }
+    
     func test_whenDataIsNotCorrectAndTheLoaderExpectTheCorrectData() {
         let clientStub = ClientStub(
             result: .success((tools.uncorrrectData(),
@@ -46,6 +50,7 @@ final class ChangeRateLoaderTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.2)
     }
+    
     func test_whenThereIsDataButTheResponseIsFailing() {
         let clientStub = ClientStub(
             result: .success((tools.correctData(data: changeRateData),
@@ -65,6 +70,7 @@ final class ChangeRateLoaderTests: XCTestCase {
         }
         wait(for: [exp], timeout: 0.2)
     }
+    
     func test_whenThereIsNoDataAndNoResponse() {
         let clientStub = ClientStub(result: .failure(APIError.unknown))
         

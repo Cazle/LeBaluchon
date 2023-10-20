@@ -9,7 +9,8 @@ final class TranslateLoader {
     
     func load(text: String, completion: @escaping (Result<TranslateModel, Error>) -> Void) {
         let url = TranslationEndpoint.translationUrl(text).url(baseURL: URL(string: "https://translation.googleapis.com")!)
-        client.request(url: url) { result in
+        client.request(url: url) { [weak self] result in
+            guard let self else { return }
             switch result {
             case let .success((data, response)):
                 completion(self.decode(data: data, response: response))
@@ -20,7 +21,6 @@ final class TranslateLoader {
     }
     func decode(data: Data, response: HTTPURLResponse) -> Result<TranslateModel, Error> {
         guard response.statusCode == 200 else {
-            print(response.statusCode)
             return .failure(APIError.invalidResponse)
         }
         guard let dataDecoded = try? JSONDecoder().decode(TranslateModel.self, from: data) else {

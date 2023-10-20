@@ -5,6 +5,7 @@ import XCTest
 final class TranslateLoaderTests: XCTestCase {
     
     let tools = Tools()
+    
     func test_whenICallTheAPIAndTheRequestIsASuccess() {
         let clientStub = ClientStub(
             result: .success((tools.correctData(data: translateData),
