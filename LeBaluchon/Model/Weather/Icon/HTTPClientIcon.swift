@@ -20,12 +20,9 @@ final class URLSessionHTTPClientIcon: HTTPClientIcon {
         session.dataTask(with: url) {data, response, error in
             if error != nil {
                 completion(.failure(SessionError.urlError))
-                return
-            } else if let data {
+            }
+            if let data = data {
                 completion(.success(data))
-                return
-            } else {
-                completion(.failure(SessionError.unexpected))
             }
         }.resume()
     }

@@ -22,7 +22,7 @@ final class TranslateLoaderTests: XCTestCase {
                 let translations = data.translations
                 let translated = translations[0].translatedText
                 XCTAssertEqual(translated, "Je m'appelle Bobby Le clown")
-            case .failure(_):
+            case .failure:
                 XCTFail("This should not happen")
             }
         }
@@ -38,7 +38,7 @@ final class TranslateLoaderTests: XCTestCase {
         
         client.load(text: "My name is Bobby The Clown") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()
@@ -57,7 +57,7 @@ final class TranslateLoaderTests: XCTestCase {
         
         client.load(text: "My name is Bobby The Clown") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()
@@ -74,7 +74,7 @@ final class TranslateLoaderTests: XCTestCase {
         
         client.load(text: "My name is Bobby The Clown") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()

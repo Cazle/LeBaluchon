@@ -24,7 +24,7 @@ final class ChangeRateLoaderTests: XCTestCase {
                 XCTAssertEqual(change.date, "2023-10-04")
                 XCTAssertEqual(change.rates.first?.value, 1.23396)
                 XCTAssertEqual(change.rates.first?.key, "USD")
-            case .failure(_):
+            case .failure:
                 XCTFail("This should not happen")
             }
         }
@@ -41,7 +41,7 @@ final class ChangeRateLoaderTests: XCTestCase {
         
         client.load(from: "EUR", to: "USD") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()
@@ -61,7 +61,7 @@ final class ChangeRateLoaderTests: XCTestCase {
         
         client.load(from: "EUR", to: "USD") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()
@@ -79,7 +79,7 @@ final class ChangeRateLoaderTests: XCTestCase {
         
         client.load(from: "EUR", to: "USD") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()

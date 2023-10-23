@@ -21,7 +21,7 @@ final class MeteoLoaderTests: XCTestCase {
                 XCTAssertEqual(data.weather[0].description, "moderate rain")
                 XCTAssertEqual(data.weather[0].main, "Rain")
                 XCTAssertEqual(data.weather[0].icon, "10d")
-            case .failure(_):
+            case .failure:
                 XCTFail("This should not happen")
             }
         }
@@ -37,7 +37,7 @@ final class MeteoLoaderTests: XCTestCase {
         
         client.load(id: 1, lang: "fr") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()
@@ -56,7 +56,7 @@ final class MeteoLoaderTests: XCTestCase {
         
         client.load(id: 1, lang: "fr") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()
@@ -73,7 +73,7 @@ final class MeteoLoaderTests: XCTestCase {
         
         client.load(id: 1, lang: "fr") {result in
             switch result {
-            case .success(_):
+            case .success:
                 XCTFail("This should not happen")
             case let .failure(error):
                 exp.fulfill()

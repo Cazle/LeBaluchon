@@ -41,7 +41,7 @@ final class ChangeRateController: UIViewController {
                     let result = String(multiplication)
                     self?.amountConvertedCurrencyTextView.text = result
                     
-                case .failure(_):
+                case .failure:
                     self?.presentAlert(message: "Unknown error happened.")
                 }
             }

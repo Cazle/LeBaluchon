@@ -13,6 +13,8 @@ final class WeatherController: UIViewController {
     @IBOutlet weak var newYorkClimateLabel: UILabel!
     @IBOutlet weak var newYorkCityIconImage: UIImageView!
     
+    @IBOutlet var spinLoaders: [UIActivityIndicatorView]!
+    
     private let loader = MeteoLoader()
     let iconLoader = IconLoader()
     
@@ -47,25 +49,40 @@ final class WeatherController: UIViewController {
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
+                    
+                    cityName.isHidden = false
+                    skyDescription.isHidden = false
+                    climateDescription.isHidden = false
+                    icon.isHidden = false
+                    
+                    self?.disableSpin()
+                    
                     let name = data.name
-                        cityName.text = name
+                    cityName.text = name
                     let weather = data.weather
-                            skyDescription.text = weather[0].description
-                            climateDescription.text = weather[0].main
+                    skyDescription.text = weather[0].description
+                    climateDescription.text = weather[0].main
                     self?.iconLoader.load(id: weather[0].icon) {result in
-                                switch result {
-                                case let .success(image):
-                                    let img = UIImage(data: image)
-                                    icon.image = img
-                                case .failure(_):
-                                    self?.presentAlert(message: "Une erreur s'est produite dans la récupération de l'icône")
-                                }
+                        DispatchQueue.main.async {
+                            switch result {
+                            case let .success(image):
+                                let img = UIImage(data: image)
+                                icon.image = img
+                            case .failure:
+                                self?.presentAlert(message: "Une erreur s'est produite dans la récupération de l'icône")
                             }
-                        
-                case .failure(_):
+                        }
+                    }
+                case .failure:
                     self?.presentAlert(message: "Une erreur s'est produite.")
                 }
             }
+        }
+    }
+    private func disableSpin() {
+        for spin in self.spinLoaders ?? [] {
+            spin.stopAnimating()
+            spin.isHidden = true
         }
     }
 }

@@ -9,17 +9,15 @@ final class IconLoader {
     func load(id: String, completion: @escaping  (Result <Data, Error>) -> Void) {
         let url = URL(string: "https://openweathermap.org/img/wn/\(id)@2x.png")!
         client.request(url: url) { result in
-            DispatchQueue.main.async {
                 switch result {
                 case let .success(data):
                     completion(.success(data))
-                case .failure(_):
+                case .failure:
                     completion(.failure(APIError.invalidData))
                 }
             }
         }
     }
-}
 
 
 
