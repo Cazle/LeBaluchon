@@ -36,7 +36,6 @@ final class ChangeRateController: UIViewController {
                 case let .success(data):
                     let dataArray = data.rates
                     guard let currency = dataArray.first?.value else { return }
-                    print(amount)
                     let multiplication = currency * amount
                     let result = String(multiplication)
                     self?.amountConvertedCurrencyTextView.text = result

@@ -55,7 +55,7 @@ final class WeatherController: UIViewController {
                     climateDescription.isHidden = false
                     icon.isHidden = false
                     
-                    self?.disableSpin()
+                    self?.disableSpins()
                     
                     let name = data.name
                     cityName.text = name
@@ -79,7 +79,7 @@ final class WeatherController: UIViewController {
             }
         }
     }
-    private func disableSpin() {
+    private func disableSpins() {
         for spin in self.spinLoaders ?? [] {
             spin.stopAnimating()
             spin.isHidden = true
