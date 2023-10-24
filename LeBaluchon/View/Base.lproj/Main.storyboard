@@ -392,7 +392,7 @@
                     <connections>
                         <outlet property="amountConvertedCurrencyTextView" destination="v3l-r4-pwi" id="wy7-vL-isD"/>
                         <outlet property="amountOfCurrencyTextView" destination="8mF-wb-tQq" id="88Y-km-MHf"/>
-                        <outlet property="pickerView" destination="rNh-cm-rKF" id="6ks-Wu-8Sc"/>
+                        <outlet property="currenciesPickerView" destination="rNh-cm-rKF" id="6ks-Wu-8Sc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uKe-Es-KOG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -5,7 +5,7 @@ final class ChangeRateController: UIViewController {
     
     @IBOutlet weak var amountOfCurrencyTextView: UITextView!
     @IBOutlet weak var amountConvertedCurrencyTextView: UITextView!
-    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var currenciesPickerView: UIPickerView!
     
     private var selectedCurrencyOnThePickerView: String?
     
@@ -15,7 +15,7 @@ final class ChangeRateController: UIViewController {
         super.viewDidLoad()
         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
-        pickerView(pickerView, didSelectRow: 0, inComponent: 0)
+        pickerView(currenciesPickerView, didSelectRow: 0, inComponent: 0)
     }
     @objc func dismissKeyboard() {
         view.endEditing(true)
@@ -59,12 +59,12 @@ extension ChangeRateController: UIPickerViewDataSource {
 }
 extension ChangeRateController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        let currencyNames = Array(allCurrencies.values).sorted()
+        let currencyNames = allCurrencies.values.sorted()
         return currencyNames[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        let selectedName = Array(allCurrencies.values).sorted()[row]
+        let selectedName = allCurrencies.values.sorted()[row]
         selectedCurrencyOnThePickerView = allCurrencies.first { $0.value == selectedName }?.key
     }
 }
