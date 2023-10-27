@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5c7-IC-0Wh">
-    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
@@ -16,112 +16,116 @@
             <objects>
                 <viewController title="Weather" id="IwW-mx-CPe" customClass="WeatherController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LgW-0o-trY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Qy9-6Q-TxG">
-                                <rect key="frame" x="50" y="461" width="314" height="332"/>
+                                <rect key="frame" x="50" y="377" width="275" height="332"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qhG-dq-ind">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="166"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="275" height="166"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="LsC-ka-n8v">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="78"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="78"/>
                                                 <subviews>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DefaultNameCity" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SMN-in-rL5">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="38"/>
                                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="okd-1f-cxb" userLabel="NameSpinner">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="39"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="39"/>
                                                     </activityIndicatorView>
                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PQw-Xs-JD2">
-                                                        <rect key="frame" x="0.0" y="39" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="39" width="275" height="0.0"/>
                                                     </imageView>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="nqR-2l-xEW" userLabel="IconSpinner">
-                                                        <rect key="frame" x="0.0" y="39" width="314" height="39"/>
+                                                        <rect key="frame" x="0.0" y="39" width="275" height="39"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jw7-r7-8ei">
-                                                <rect key="frame" x="0.0" y="88" width="314" height="78"/>
+                                                <rect key="frame" x="0.0" y="88" width="275" height="78"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions Météorologique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWO-Xq-1dd">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="26"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Météo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWO-Xq-1dd">
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="26"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="frb-0E-vfd" userLabel="SpinDesc">
-                                                        <rect key="frame" x="0.0" y="26" width="314" height="26"/>
+                                                        <rect key="frame" x="0.0" y="26" width="275" height="26"/>
                                                     </activityIndicatorView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CielDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="swd-ix-Ez3">
-                                                        <rect key="frame" x="0.0" y="52" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="52" width="275" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3dq-mt-38a" userLabel="SpinSky">
-                                                        <rect key="frame" x="0.0" y="52" width="314" height="26"/>
+                                                        <rect key="frame" x="0.0" y="52" width="275" height="26"/>
                                                     </activityIndicatorView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TempsDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LTm-Di-Gns">
-                                                        <rect key="frame" x="0.0" y="78" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="78" width="275" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="cWO-Xq-1dd" secondAttribute="trailing" id="cCr-Ch-9H4"/>
+                                                    <constraint firstItem="cWO-Xq-1dd" firstAttribute="leading" secondItem="jw7-r7-8ei" secondAttribute="leading" id="yA5-e2-4F7"/>
+                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="2iH-H3-8x3">
-                                        <rect key="frame" x="0.0" y="166" width="314" height="166"/>
+                                        <rect key="frame" x="0.0" y="166" width="275" height="166"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vqA-8I-rKS">
-                                                <rect key="frame" x="0.0" y="0.0" width="314" height="83"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="275" height="83"/>
                                                 <subviews>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DefaultNameCity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eo-HJ-hnG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="0.0"/>
                                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="38"/>
                                                         <color key="textColor" systemColor="systemIndigoColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="cdg-Am-fr1" userLabel="NameSpinnerNY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="41.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="41.666666666666664"/>
                                                     </activityIndicatorView>
                                                     <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Nx3-cW-dMn">
-                                                        <rect key="frame" x="0.0" y="41.666666666666629" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="41.666666666666629" width="275" height="0.0"/>
                                                     </imageView>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="NsU-go-O1m" userLabel="IconSpinnerNY">
-                                                        <rect key="frame" x="0.0" y="41.666666666666629" width="314" height="41.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="41.666666666666629" width="275" height="41.333333333333343"/>
                                                     </activityIndicatorView>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="KVi-YX-iW3">
-                                                <rect key="frame" x="0.0" y="83" width="314" height="83"/>
+                                                <rect key="frame" x="0.0" y="83" width="275" height="83"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conditions Météorologique" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9n-Gv-0gG">
-                                                        <rect key="frame" x="0.0" y="0.0" width="314" height="27.666666666666668"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Météo" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d9n-Gv-0gG">
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="27.666666666666668"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="WhC-yW-ucq" userLabel="SpinDescNY">
-                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="314" height="27.666666666666671"/>
+                                                        <rect key="frame" x="0.0" y="27.666666666666629" width="275" height="27.666666666666671"/>
                                                     </activityIndicatorView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CielDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MMe-Hc-NTd">
-                                                        <rect key="frame" x="0.0" y="55.333333333333371" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="55.333333333333371" width="275" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eC9-Cm-kyi" userLabel="SpinSkyNY">
-                                                        <rect key="frame" x="0.0" y="55.333333333333364" width="314" height="27.666666666666664"/>
+                                                        <rect key="frame" x="0.0" y="55.333333333333364" width="275" height="27.666666666666664"/>
                                                     </activityIndicatorView>
                                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TempsDescription" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="15y-IX-4pM">
-                                                        <rect key="frame" x="0.0" y="83" width="314" height="0.0"/>
+                                                        <rect key="frame" x="0.0" y="83" width="275" height="0.0"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="21"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -133,7 +137,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISb-Rt-C5D">
-                                <rect key="frame" x="78.666666666666686" y="54" width="257" height="387"/>
+                                <rect key="frame" x="59" y="60" width="257" height="297"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemMintColor"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="37"/>
@@ -184,18 +188,18 @@
             <objects>
                 <viewController title="Traduction" id="LGh-By-4xj" customClass="TranslateController" customModule="LeBaluchon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Y0I-Jp-XIo">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BLi-Cn-CAl">
-                                <rect key="frame" x="78.666666666666686" y="54" width="257" height="47"/>
+                                <rect key="frame" x="59" y="60" width="257" height="47"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="37"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbO-Lt-PNy">
-                                <rect key="frame" x="155.66666666666666" y="769" width="102.99999999999997" height="34"/>
+                                <rect key="frame" x="136" y="685" width="103" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="vzQ-p0-CFZ"/>
                                 </constraints>
@@ -205,17 +209,23 @@
                                     <action selector="translateButton:" destination="LGh-By-4xj" eventType="touchUpInside" id="CqL-cz-P5X"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-58-Y7g">
-                                <rect key="frame" x="10" y="111" width="394" height="648"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="aTh-58-Y7g">
+                                <rect key="frame" x="10" y="117" width="355" height="558"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TRADUCTEUR FR → EN" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z4p-wA-reD">
-                                        <rect key="frame" x="30" y="0.0" width="334" height="212.66666666666666"/>
+                                        <rect key="frame" x="30" y="0.0" width="295" height="127.66666666666667"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="33"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ecrivez votre traduction dans le premier rectangle ci-dessous." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djQ-4S-fL9">
+                                        <rect key="frame" x="16" y="143.66666666666669" width="323.33333333333337" height="127.33333333333331"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Wx5-i4-CdV">
-                                        <rect key="frame" x="30" y="217.66666666666669" width="334" height="212.66666666666669"/>
+                                        <rect key="frame" x="30" y="287" width="295" height="127.66666666666669"/>
                                         <color key="backgroundColor" name="HandleDarkApparence"/>
                                         <color key="tintColor" name="HandleDarkApparence"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
@@ -223,7 +233,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Afd-xX-rsd">
-                                        <rect key="frame" x="30" y="435.33333333333343" width="334" height="212.66666666666669"/>
+                                        <rect key="frame" x="30" y="430.66666666666663" width="295" height="127.33333333333337"/>
                                         <color key="backgroundColor" name="HandleDarkApparence"/>
                                         <color key="tintColor" name="HandleDarkApparence"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
@@ -269,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="93Q-WK-grF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335.04672897196258" y="4.5356371490280782"/>
+            <point key="canvasLocation" x="-335.19999999999999" y="4.4334975369458132"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="oDa-VQ-4X4">
@@ -298,11 +308,11 @@
             <objects>
                 <viewController title="ChangeRate" id="ZGJ-xT-iUx" customClass="ChangeRateController" customModule="LeBaluchon" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6Ld-dN-RdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Le Baluchon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfQ-pN-aPM">
-                                <rect key="frame" x="78.666666666666686" y="54" width="257" height="47"/>
+                                <rect key="frame" x="59" y="60" width="257" height="47"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" systemColor="systemMintColor"/>
                                 <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="37"/>
@@ -310,7 +320,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="252" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNZ-oQ-CJm">
-                                <rect key="frame" x="151.33333333333334" y="768.66666666666663" width="111.66666666666666" height="34.333333333333371"/>
+                                <rect key="frame" x="131.66666666666666" y="684.66666666666663" width="111.66666666666666" height="34.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemRedColor"/>
                                 <color key="tintColor" systemColor="systemBlueColor"/>
                                 <state key="normal" title="Button"/>
@@ -322,16 +332,22 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="plQ-Fa-fAL">
-                                <rect key="frame" x="30" y="131" width="354" height="607.66666666666663"/>
+                                <rect key="frame" x="30" y="137" width="315" height="517.66666666666663"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Taux de change EUR → VOTRE MONNAIE" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qAx-J6-Jl5">
-                                        <rect key="frame" x="0.0" y="0.0" width="354" height="129.33333333333334"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="79.666666666666671"/>
                                         <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="26"/>
                                         <color key="textColor" systemColor="systemGreenColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Entrez votre montant dans le premier rectange ci-dessous." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Qc-3P-W6G">
+                                        <rect key="frame" x="0.0" y="109.66666666666666" width="315" height="79.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="251" keyboardDismissMode="onDrag" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="8mF-wb-tQq">
-                                        <rect key="frame" x="0.0" y="159.33333333333331" width="354" height="129.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="218.99999999999997" width="315" height="79.666666666666657"/>
                                         <color key="backgroundColor" name="HandleDarkApparence"/>
                                         <color key="tintColor" name="HandleDarkApparence"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
@@ -339,7 +355,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" keyboardType="numberPad" enablesReturnKeyAutomatically="YES" smartInsertDeleteType="no" smartQuotesType="no"/>
                                     </textView>
                                     <pickerView contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="rNh-cm-rKF">
-                                        <rect key="frame" x="0.0" y="319" width="354" height="129.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="328.66666666666669" width="315" height="79.333333333333314"/>
                                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
@@ -348,7 +364,7 @@
                                         </connections>
                                     </pickerView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3l-r4-pwi">
-                                        <rect key="frame" x="0.0" y="478.33333333333331" width="354" height="129.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="438" width="315" height="79.666666666666629"/>
                                         <color key="backgroundColor" name="HandleDarkApparence"/>
                                         <color key="tintColor" name="HandleDarkApparence"/>
                                         <color key="textColor" systemColor="systemBlueColor"/>
